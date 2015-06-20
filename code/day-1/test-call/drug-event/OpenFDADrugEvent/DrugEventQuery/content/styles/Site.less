@@ -1,0 +1,444 @@
+﻿// palette
+// reds: #B01E23 #d03E43
+// blues: #6D8fa6 #9DBDC6
+// greys: #373737 #717171 #404040 #DEDEDE #ECF0F1
+
+@darkTextColor: #000000;
+@lightTextColor: #ffffff;
+
+@highlightColor: #B01E23;
+@highlightSelectionColor: #d03E43;
+
+@highlightColorSecondary: @selectionColor;
+
+@focusColor: #DAEAEF;
+
+// strong action items
+@actionColor: #404040;
+@hoverColor: #9DBDC6;
+
+@selectionColor: #6D8fa6;
+@activeColor: @selectionColor;
+
+@actionTextColor: @lightTextColor;
+@hoverTextColor: @lightTextColor;
+@selectionTextColor: @lightTextColor;
+@activeTextColor: @lightTextColor;
+
+// light action items
+@actionColorLight: #DEDEDE;
+@hoverColorLight: #9DBDC6;
+@selectionColorLight: #9DBDC6;
+@activeColorLight: @selectionColorLight;
+
+@actionTextColorLight: @darkTextColor;
+@hoverTextColorLight: @lightTextColor;
+@selectionTextColorLight: @lightTextColor;
+@activeTextColorLight: @selectionTextColorLight;
+
+// backgrounds
+@headerColor: #373737;
+@headerTextColor: @lightTextColor;
+
+@subHeaderColor: #717171;
+@subHeaderTextColor: @lightTextColor;
+
+@backgroundColor: #ECF0F1;
+@toolBackgroundColor: #ECF0F1;
+
+@menuBackgroundColor: #eeeeee;
+@contentBackgroundColor: #ffffff;
+
+// padding default
+@paddingdefault: 10px;
+
+// grids
+@gridBorder: @highlightColor;
+@gridBackground: #ffffff;
+
+// main header height
+@menuAreaHeight: 40px;
+
+// large button height
+@buttonHeightLarge: @menuAreaHeight;
+
+// header for sub sections
+@sectionHeaderHeight: 29px;
+
+// small button height
+@buttonHeightSmall: @sectionHeaderHeight;
+
+// icons
+@loadingIcon: url(data:image/gif;base64,R0lGODlhEAAQAPEAALAeI/8AAO0GBwAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAACLYSPacLtvkA7U64qGb2C6gtyXmeJHIl+WYeuY7SSLozV6WvK9pfqWv8IKoaIAgAh+QQJCgAAACwAAAAAEAAQAAACLYSPacLtvhY7DYhY5bV62xl9XvZJFCiGaReS1Xa5ICyP2jnS+M7drPgIKoaIAgAh+QQJCgAAACwAAAAAEAAQAAACLISPacLtvk6TE4jF6L3WZsyFlcd1pEZhKBixYOie8FiJ39nS97f39gNUCBEFACH5BAkKAAAALAAAAAAQABAAAAIshI9pwu2+xGmTrSqjBZlqfnnc1onmh44RxoIp5JpWN2b1Vdvn/ZbPb1MIAQUAIfkECQoAAAAsAAAAABAAEAAAAi2Ej2nC7b7YaVPEamPOgOqtYd3SSeFYmul0rlcpnpyXgu4K0t6mq/wD5CiGgAIAIfkECQoAAAAsAAAAABAAEAAAAiyEj2nC7b7akSuKyXDE11ZvdWLmiQB1kiOZdifYailHvzBko5Kpq+HzUAgRBQA7AAAAAAAAAAAA);
+
+.loadingGraphic {
+    background-image: @loadingIcon;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    display:inline-block;
+}
+
+// Overrides
+html {
+    height: 100%;
+    width: 100%;
+
+    body {
+        font-family: sans-serif;
+        font-size: .9em;
+        height: 100%;
+        width: 100%;
+        background: @backgroundColor;
+    }
+}
+
+a {
+    // creates an anchor tag with a dotted underline
+    font-size: 1em;
+    text-decoration: none !important;
+    border-bottom: 1px dotted;
+    color: @highlightColor;
+
+    &:hover {
+        color: @hoverColor;
+    }
+}
+
+input {
+    padding: 3px;
+    border: 1px solid @highlightColor;
+    outline: none;
+}
+
+select{
+    padding: 3px;
+    border: 1px solid @highlightColor;
+
+    option{
+        &:hover{
+            background: @hoverColor;
+            color: @hoverTextColor;
+        }
+    }
+}
+
+// Positioning
+.zeroContent {
+    // resets position below this style. So any children defined
+    // with absolute will be absolute to this element
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.zeroPosition {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// Horizontally Centered Items
+.usss-first_adjacentcentered {
+    // use an element with the "first" class followed immediately
+    // by an element with the "second" class to horizontally align
+    // the second element with the first
+    font-weight: bold;
+    display: inline-block;
+}
+
+.usss-first_adjacentcentered, 
+.usss-second_adjacentcentered {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+
+// Page Organization
+.usss-inputItem {
+    padding: 0;
+    margin: 4px 4px 4px 0;
+
+    label{
+        width: 70px;
+        text-align: right;
+        display: inline-block;
+    }
+}
+
+.usss-inputGroup {
+    padding: 5px 10px 5px 10px;
+}   
+
+// Content Sections
+.usss-sectionHeader {
+    width: 100%; 
+    height: @sectionHeaderHeight; 
+    background-color: @subHeaderColor;
+
+    .usss-boxBorderBottom {
+        // creates the underline in the menu area
+
+        height: 5px;
+        width: 100%;
+        background-color: @highlightColorSecondary;
+    }
+}
+
+.usss-sectionMenu {
+    position: absolute;
+    top: @sectionHeaderHeight;
+    left: 0;
+    bottom: 0;
+    width: 150px;
+    background-color: @menuBackgroundColor; 
+}
+
+.usss-sectionContent {
+    position: absolute; 
+    top: @sectionHeaderHeight;
+    bottom: 0; 
+    left: 150px; 
+    right: 0;
+
+    background-color: @contentBackgroundColor;
+}
+
+.usss-contentArea {
+    padding: 10px; 
+    height: 100%;
+}
+
+.usss-scrollable  {
+    overflow: auto;
+}
+
+.usss-toolBackground {
+    background-color: @toolBackgroundColor; 
+    height: 100%; 
+    width: 100%;
+}
+
+// Highlighted Text
+.usss-highlightedText{
+    color: @highlightColor;
+}
+
+.usss-menuArea {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: @menuAreaHeight;
+    background: @headerColor;
+    color: @headerTextColor;
+
+    background-image: url('/Content/images/backgroundTile.png');
+
+    .usss-boxBorderBottom {
+        // creates the underline in the menu area
+
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: @highlightColor;
+    }
+}
+
+.usss-pageContentArea {
+    // everything below the menu area
+    position: absolute;
+    top: @menuAreaHeight;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// Selection Items
+.usss-menuItem {
+    width: 100%;
+    height: 25px;
+
+    &:hover {
+        background-color: @hoverColorLight;
+        color: @hoverTextColorLight;
+    }
+}
+
+.usss-selectedMenuItem {
+    background-color: @selectionColorLight;
+    color: @selectionTextColorLight;
+    width: 100%;
+    height: 25px;
+
+    &:hover {
+        background-color: @hoverColorLight;
+        color: @hoverTextColorLight;
+    }
+}
+
+// Selectable Content
+.usss-selectableGroup {
+    padding: 5px 10px 5px 10px;
+    background: @actionColorLight;
+    color: @actionTextColorLight;
+    margin: 2px 0;
+
+    &:hover {
+        background: @hoverColorLight;
+        color: @hoverTextColorLight;
+    }
+
+    &:active {
+        background: @activeColorLight;
+        color: @activeTextColorLight;
+    }
+}
+
+.usss-scrollInputGroup {
+    padding: 5px 10px 5px 10px;
+    overflow-y: auto;
+}
+
+// Permission Styles
+.contentSection {
+    padding: 2px 10px;
+}
+
+.usss-windowBounds {
+    z-index: 99;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// Buttons
+.usss-flatButtonBig {
+    height: @buttonHeightLarge;
+    margin: 0;
+    padding: 10px 15px 10px 15px;
+    border: none;
+    outline: none;
+    background: @actionColor;
+    color: @actionTextColor;
+
+    &:active {
+        background: @activeColor;
+        color: @activeTextColor;
+    }
+
+    &:hover {
+        background: @highlightSelectionColor;
+        color: @hoverTextColor;
+    }
+}
+
+.usss-flatButton {
+    height: @buttonHeightSmall;
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    outline: none;
+    background: @actionColor;
+    color: @actionTextColor;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    display: inline-block;
+
+    &:active {
+        background: @activeColor;
+        color: @activeTextColor;
+    }
+
+    &:hover {
+        background: @hoverColor;
+        color: @hoverTextColor;
+    }
+}
+
+.usss-highlightItem {
+    background-color: @highlightColor;
+    color: @lightTextColor;
+}
+
+// used for display events (when something display: none; needs to appear)
+.usss-inlineBlock {
+    display: inline-block !important;
+}
+
+.usss-selectedItem {
+    background-color: @selectionColor;
+    color: @selectionTextColor;
+}
+
+.usss-transparentItem {
+    background-color: transparent;
+}
+
+.usss-hiddenItem {
+    display: none;
+}
+
+// animations
+.usss-resizeAnimation {
+    -moz-transition: width 1s ease-in-out, left .5s ease-in-out;
+    -webkit-transition: width 1s ease-in-out, left .5s ease-in-out;
+    -o-transition: width 1s ease-in-out, left .5s ease-in-out;
+    transition: width 1s ease-in-out, left .5s ease-in-out;
+}
+
+// main page dimensions
+@clientViewWidth: 600px;
+
+.usss-clientView {
+    height: 100%;
+    width: 100%;    
+}
+
+.usss-gisApiView {
+    height: 100%;
+    width: 100%;
+    padding-left: 5px;
+}
+
+// ngGrid styling
+.gridStyle {
+    border: 1px solid @gridBorder !important;
+    width: 580px;
+    height: 300px;
+    background: @gridBackground;
+
+    .ui-grid-cell-contents{
+
+        &:focus {
+            background-color: transparent !important;
+        }
+    }
+
+    .ui-grid-row-selected {
+        .ui-grid-cell{
+            background-color: @selectionColorLight !important;
+            color: @selectionTextColorLight !important;
+        }
+    }
+}
+
+// padding divs
+.pad-leftright{
+    padding-left: @paddingdefault;
+    padding-right: @paddingdefault;
+}
+
+.pad-topbottom{
+    padding-top: @paddingdefault;
+    padding-bottom: @paddingdefault;
+}

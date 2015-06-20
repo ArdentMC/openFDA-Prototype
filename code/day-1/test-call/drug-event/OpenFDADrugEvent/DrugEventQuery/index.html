@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Adverse Drug Query</title>
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/css/social-buttons.css" rel="stylesheet" />
+    <link href="content/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="content/css/angular-toastr.css" />
+    <link rel="stylesheet" href="content/css/app.css" />
+
+    <!-- jquery scripts -->
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/jquery.form.min.js"></script>
+    <script src="scripts/qTip/jquery.qtip.min.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#/view1">Drug Action Report</a></li>
+    <li><a href="#/view2">Food Recall Report</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+  <div>Angular seed app: v<span app-version></span></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="scripts/angular.js"></script>
+  <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/angular-mocks.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/ui-bootstrap-tpls-0.12.1.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/services.js"></script>
+  <script src="app/controllers.js"></script>
+  <script src="app/filters.js"></script>
+  <script src="app/directives.js"></script>
+</body>
+</html>
