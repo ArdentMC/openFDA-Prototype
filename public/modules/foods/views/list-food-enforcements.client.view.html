@@ -1,0 +1,20 @@
+<section data-ng-controller="FoodsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Food Enforcements</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="fooditem in foodEnforcementList" data-ng-href="#!/foodEnforcementList/{{fooditem['@id']}}" class="list-group-item">
+            <small class="list-group-item-text">
+                Report date:
+                <span data-ng-bind="fooditem.report_date"></span>
+                Recall Number:
+                <span data-ng-bind="fooditem.recall_number"></span>
+            </small>
+            <h4 class="list-group-item-heading" data-ng-bind="fooditem.product_description"></h4>
+            <p class="list-group-item-text" data-ng-bind="fooditem.reason_for_recall"></p>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-if="foodEnforcementList.$resolved && !foodEnforcementList.length">
+        No food recalls yet...
+    </div>
+</section>
