@@ -1,0 +1,19 @@
+<section data-ng-controller="FoodAlertsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Food alerts</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="foodAlert in foodAlerts" data-ng-href="#!/food-alerts/{{foodAlert._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="foodAlert.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="foodAlert.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="foodAlert.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!foodAlerts.$resolved || foodAlerts.length">
+    	No Food alerts yet, why don't you <a href="/#!/food-alerts/create">create one</a>?
+    </div>
+</section>
