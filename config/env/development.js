@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/openfda-prototype-dev',
+	db: 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
 	app: {
 		title: 'openFDA-prototype - Development Environment'
 	},

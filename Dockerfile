@@ -1,8 +1,11 @@
 FROM node
 
 MAINTAINER Matthias Luebken, matthias@catalyst-zero.com
-
+ 
 WORKDIR /home/mean
+
+# Install mongo-db
+RUN npm install mongodb
 
 # Install Mean.JS Prerequisites
 RUN npm install -g grunt-cli
