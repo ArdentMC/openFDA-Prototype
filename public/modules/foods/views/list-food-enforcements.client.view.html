@@ -1,8 +1,38 @@
-<section data-ng-controller="FoodsController" data-ng-init="find()">
-    <div class="page-header">
+<section data-ng-controller="FoodsController" >
+    <div class="page-header" style="margin-bottom:0">
         <h1>Food Enforcements</h1>
     </div>
-    <div class="container-fluid" style="height:768px; margin:0;padding: 0">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">Search By</a>
+        </div>
+        <div style="width:Calc(100% - 113.047px);position:relative;float:left;display:inline">
+            <form class="navbar-form navbar-left" role="search" style="width:100%">
+                <div class="form-group" style="height:100%;width:130px">
+                    <div class="dropdown  btn-group" width:100%>
+                        <a id="statedropdown" href="#" data-toggle="dropdown" class="btn dropdown-toggle">{{queryObject.state.DESC}} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="state in stateList"  ng-class="{selectedState: isSelected(state)}" ng-cloak=""><a href ng-click="setSelected(state)">{{state.DESC}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group" style="height:100%;width:270px;padding:0">
+                    <input id="startDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="Start date" ng-model="queryObject.startDate" is-open="startDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
+                    <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
+                        <button type="button" class="btn btn-default" ng-click="startDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+                <div class="form-group" style="height:100%;width:270px;padding:0">
+                    <input id="endDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="End date" ng-model="queryObject.endDate" is-open="endDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
+                    <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
+                        <button type="button" class="btn btn-default" ng-click="endDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+                <button type="submit"  ng-click="find()" class="btn btn-default" style="float:right">Submit</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container-fluid" style="height:768px; margin:0;padding: 0" data-ng-show="foodEnforcementList.length > 0">
         <div class="tabbable tabs-left"  style="width:20%;height:100%;position: relative; top:0; float:left;overflow-y:scroll;margin-bottom:0;">
             <ul id="foodtab" class="nav nav-pills">
                 <li data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}">
