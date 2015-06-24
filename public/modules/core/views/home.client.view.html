@@ -15,25 +15,16 @@
 	</div>
 	<div>
 		<h2>Welcome</h2>
-		<p>Application description</p>
+		<p>This a quote prototype for a client to the Open FDA Api web service.</p>
 		<p>This application allows users to...</p>
         <ul>
             <li>
-                Do this
-            </li>
-            <li>
-                Do that
-            </li>
-            <li>
-                Do something
-            </li>
-            <li>
-                Do something else
+                Search the Open FDA Api for Food Enforement Recalls that took place in a specified state for a user supplied, range of dates.
             </li>
         </ul>
 	</div>
-	<div class="row">		
-		<div class="col-md-3">
+	<div class="row">
+		<div class="col-md-3" ng-hide="true">
 			<h2>
 				<strong>M</strong>edication
 			</h2>
@@ -43,19 +34,20 @@
 			<h2>
 				<strong>F</strong>ood
 			</h2>
-			<p>Create alerts for<a href="/#!/foods"> food recalls</a></p>
+			<p ng-hide="{{isAuth}}">View reports of food recalls.<br/><b>Must be logged in.</b></p>
+			<p ng-show="{{isAuth}}">View reports of <a href="/#!/foodEnforcements">food recalls.</a></p>
 		</div>
-	    <div class="col-md-3">
+	    <div class="col-md-3" ng-hide="true">
 	        <h2>
 	            <strong>D</strong>evices
 	        </h2>
 	        <p>Manage <a href="/#!/devices">devices</a> you want to be alerted on</p>
 	    </div>
-        <div class="col-md-3">
+        <div class="col-md-3" ng-hide="true">
             <h2>
                 <strong>A</strong>reas
             </h2>
-            <p>Manage <a href="/#!/devices">areas</a> you want to be alerted on</p>
+            <p>Manage <a href="/#!/areas">areas</a> you want to be alerted on</p>
         </div>
 	</div>
 	<div class="well">
