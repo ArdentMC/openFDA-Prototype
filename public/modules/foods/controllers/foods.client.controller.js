@@ -68,9 +68,9 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             { CODE: 'VI', DESC: 'Vrgin Islands' },
         ];
         $scope.queryObject = {
-            endDate : new Date(),
+            endDate : null,
             startDate: null,
-            state : { CODE: 'TX', DESC: 'Texas' }
+            state : { CODE: '', DESC: 'State / Provence' }
         }
 
         var orderBy = $filter('orderBy');
@@ -78,7 +78,6 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.startDateOpened = false;
         $scope.endDateOpened = false;
 
-        $scope.queryObject.startDate = new Date($scope.queryObject.endDate.getTime() + ((-30) * 1000 * 60 * 60 * 24));
         // Find a list of FoodEnforcements
         $scope.find = function() {
             var startdate = $scope.queryObject.startDate.format('yyyymmdd');
