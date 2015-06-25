@@ -93,6 +93,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                     $scope.foodEnforcementList.push(value);
                 });
                 orderBy($scope.foodEnforcementList, 'recall_initiation_date', true);
+                $scope.updateMap($scope.foodEnforcementList[0]);
             });
         };
 
@@ -136,5 +137,67 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.isSelected = function (state) {
             return $scope.queryObject.state && state.CODE === $scope.queryObject.state.CODE;
         };
+        
+        /* Map related code */        
+        $scope.mapData = null;
+        $scope.map = null;        
+        $scope.mapOptions = {
+            region: "US",
+            legend: "none",
+            width: 700,
+            height: 500,
+            backgroundColor: "white",
+            datalessRegionColor: "#E8FFD1",
+            defaultColor: "red",
+            resolution: "provinces"
+        };
+
+        $scope.initMap = function () {            
+            $scope.mapData = new google.visualization.DataTable();
+            $scope.mapData.addColumn('string', 'State');
+            $scope.map = new google.visualization.GeoChart(document.getElementById('foodMap'));
+            
+            $scope.map.draw($scope.mapData, $scope.mapOptions);
+        }
+
+        $scope.clearMapData = function() {
+            if ($scope.mapData) {
+                var dataCount = $scope.mapData.getNumberOfRows();
+                if (dataCount > 0) {
+                    $scope.mapData.removeRows(0, dataCount);
+                }
+            } else {
+                $scope.initMap();
+            }
+        }
+
+        $scope.updateMap = function(item) {
+            $scope.clearMapData();
+            if (item) {
+                var dis = item.distribution_pattern;
+                if (dis) {
+                    var disArray = dis.replace("and",",").replace(" ", "").split(",");
+                    if (disArray.length > 0) {
+                        angular.forEach(disArray, function (d) {
+                            var state = d.trim();
+                            if (state != "" && state.length == 2) {
+                                var stateItem = "US-" + state;
+                                $scope.mapData.addRow([stateItem]);
+                            }
+                        });
+                        $scope.map.draw($scope.mapData, $scope.mapOptions);
+                    }
+                }
+            }
+        }
     }
 ]);
+
+google.setOnLoadCallback(function () {
+    try {
+        angular.bootstrap(document, ['foods']);
+    } catch (e) {
+    }
+});
+
+google.load('visualization', '1', { packages: ['geochart'] });
