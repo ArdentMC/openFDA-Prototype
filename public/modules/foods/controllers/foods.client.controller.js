@@ -83,7 +83,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             var startdate = $scope.queryObject.startDate.format('yyyymmdd');
             var endDate = $scope.queryObject.endDate.format('yyyymmdd');;
             var stateCode = $scope.queryObject.state.CODE;
-
+            $scope.foodEnforcementList.length = 0;
             FoodEnforcements.query(startdate, endDate, stateCode).then(function (response) {
                 angular.forEach(response.results, function (value) {
                     var tempdate = value.recall_initiation_date;
