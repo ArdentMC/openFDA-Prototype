@@ -54,7 +54,7 @@
         <div class="tabbable tabs-left"  style="width:20%;height:100%;position: relative; top:0; float:left;overflow-y:scroll;margin-bottom:0;">
             <ul id="foodtab" class="nav nav-pills">
                 <li data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}">
-                    <a href="#tab{{$index + 1}}" data-toggle="tab" class="list-group-item">
+                    <a href="#tab{{$index + 1}}" data-toggle="tab" ng-click="updateMap(fooditem)" class="list-group-item">
                         <small class="list-group-item-text">
                         Recall Number:
                         <span data-ng-bind="fooditem.recall_number"></span><br/>
@@ -80,7 +80,7 @@
                 <p class="list-group-item-text"><b>Recall Date: </b>{{fooditem.recall_initiation_date | date:'yyyy-MM-dd'}}</p>
                 <p class="list-group-item-text"><b>Recall Status: </b>{{fooditem.status}}</p>
             </div>
-             <div id="foodMap"></div>
+            <div id="foodMap"></div>
         </div>
     </div>
 </section>
