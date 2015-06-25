@@ -51,32 +51,30 @@
         </div>
     </nav>
     <div class="container-fluid" style="height:768px; margin:0;padding: 0" data-ng-show="foodEnforcementList.length > 0">
-        <div class="tabbable tabs-left"  style="width:20%;height:100%;position: relative; top:0; float:left;overflow-y:scroll;margin-bottom:0;">
+        <div class="tabbable tabs-left"  style="width:25%;height:100%;position: relative; top:0; float:left;overflow-y:scroll;margin-bottom:0;">
             <ul id="foodtab" class="nav nav-pills">
-                <li data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}">
+                <li data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}"   style="width:100%">
                     <a href="#tab{{$index + 1}}" data-toggle="tab" ng-click="updateMap(fooditem)" class="list-group-item">
                         <small class="list-group-item-text">
+                        <b><span data-ng-bind="fooditem.recalling_firm"></span></b>
+                        <p class="list-group-item-text">{{fooditem.city}}, {{fooditem.state}}</p><br/>
                         Recall Number:
                         <span data-ng-bind="fooditem.recall_number"></span><br/>
                         Report date:
-                        <span data-ng-bind="fooditem.report_date | date:'yyyy-MM-dd'"></span><br/>
-                        Product Type:
-                        <span data-ng-bind="fooditem.product_type"></span><br/>
-                        Product Item:<br/>
-                        <b><span class="list-group-item-text" data-ng-bind="fooditem.product_description"></span></b>
+                        <span data-ng-bind="fooditem.report_date | date:'yyyy-MM-dd'"></span>
                         </small>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="tab-content"  style="height: 100%;width:80%;float:left;position:relative; padding: 10px;display:inline;" >
+        <div class="tab-content"  style="height: 100%;width:75%;float:left;position:relative; padding: 10px;display:inline;" >
             <div class="tab-pane" id="tab{{$index + 1}}" data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}">
                 <h4><b>{{fooditem.voluntary_mandated}} Product Recall</b></h4>
                 <p class="list-group-item-text" data-ng-bind="fooditem.reason_for_recall"></p><br/>
+                <p class="list-group-item-text"><b>Product Decription: </b>{{fooditem.product_description}}</p><br/>
                 <p class="list-group-item-text"><b>Product Packaging/Code: </b>{{fooditem.code_info}}</p>
                 <p class="list-group-item-text"><b>Affected States and Countries: </b>{{fooditem.distribution_pattern}}</p>
                 <p class="list-group-item-text"><b>Affected Quantity: </b>{{fooditem.product_quantity}}</p>
-                <p class="list-group-item-text"><b>Recalling Firm: </b>{{fooditem.recalling_firm}} of {{fooditem.city}}, {{fooditem.state}}, {{fooditem.country}}</p>
                 <p class="list-group-item-text"><b>Recall Date: </b>{{fooditem.recall_initiation_date | date:'yyyy-MM-dd'}}</p>
                 <p class="list-group-item-text"><b>Recall Status: </b>{{fooditem.status}}</p>
             </div>
