@@ -1,15 +1,8 @@
 language: node_js
 node_js:
   - "0.10"
-services:
-  - mongodb
+  - "0.11"
 env:
   - NODE_ENV=travis
-before_script:
-  - chmod +x public/lib
-  - chmod +x bower
-  - npm install -g bower
-  - npm install -g grunt-cli
-  - bower install
-script:
-  - npm install
+services:
+  - mongodb
