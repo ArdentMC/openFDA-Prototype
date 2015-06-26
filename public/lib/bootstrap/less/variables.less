@@ -102,9 +102,9 @@
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-base:        0;
+@border-radius-large:       0;
+@border-radius-small:       0;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -324,7 +324,7 @@
 //** Number of columns in the grid.
 @grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         30px;
+@grid-gutter-width:         100px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     @screen-sm-min;
@@ -357,7 +357,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    50px;
+@navbar-height:                    40px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
@@ -365,7 +365,7 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-bg:                #777;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
@@ -391,7 +391,7 @@
 //=== Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      lighten(@gray-light, 15%);
-@navbar-inverse-bg:                         #222;
+@navbar-inverse-bg:                         rgba(0,0,0,0.8);
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
@@ -762,7 +762,7 @@
 
 @well-bg:                     #f5f5f5;
 @well-border:                 darken(@well-bg, 7%);
-
+@well-border-width:           0px;
 
 //== Badges
 //
@@ -780,7 +780,7 @@
 
 @badge-font-weight:           bold;
 @badge-line-height:           1;
-@badge-border-radius:         10px;
+@badge-border-radius:         0;
 
 
 //== Breadcrumbs
