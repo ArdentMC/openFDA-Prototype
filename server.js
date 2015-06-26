@@ -13,12 +13,27 @@ var init = require('./config/init')(),
  */
 
 // Bootstrap db connection
+/**
 var db = mongoose.connect(config.db, function(err) {
 	if (err) {
 		console.error(chalk.red('Could not connect to MongoDB!'));
 		console.log(chalk.red(err));
 	}
 });
+*/
+
+// Bootstrap db with retry
+var connectWithRetry = function() {
+  return mongoose.connect(config.db, function(err) {
+    if (err) {
+      console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+      setTimeout(connectWithRetry, 5000);
+    } else {
+      console.log('MongoDB Connected :)');
+    }
+  });
+};
+var db = connectWithRetry();
 
 // Init the express application
 var app = require('./config/express')(db);
