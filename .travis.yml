@@ -6,6 +6,7 @@ services:
 env:
   - NODE_ENV=travis
 before_script:
+  - chmod +x /home/mean
   - npm install -g bower
   - npm install -g grunt-cli
 
