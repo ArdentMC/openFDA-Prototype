@@ -25,18 +25,18 @@ var validateLocalStrategyPassword = function(password) {
  * User Schema
  */
 var UserSchema = new Schema({
-	firstName: {
-		type: String,
-		trim: true,
-		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your first name']
-	},
-	lastName: {
-		type: String,
-		trim: true,
-		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your last name']
-	},
+	//firstName: {
+	//	type: String,
+	//	trim: true,
+	//	default: '',
+	//	validate: [validateLocalStrategyProperty, 'Please fill in your first name']
+	//},
+	//lastName: {
+	//	type: String,
+	//	trim: true,
+	//	default: '',
+	//	validate: [validateLocalStrategyProperty, 'Please fill in your last name']
+	//},
 	displayName: {
 		type: String,
 		trim: true
@@ -99,6 +99,8 @@ UserSchema.pre('save', function(next) {
 		this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
 		this.password = this.hashPassword(this.password);
 	}
+
+	this.displayName = this.username;
 
 	next();
 });

@@ -1,11 +1,17 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication',
-	function($scope, Authentication) {
-		$scope.isAuth = false;
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$location',
+	function($scope, Authentication, $location) {
 		// This provides Authentication context.
+		if(Authentication.user == null || Authentication.user._id == null){
+			Authentication.user = null;
+		}
 		$scope.authentication = Authentication;
-		$scope.isAuth = ($scope.authentication.user != null && $scope.authentication.user._id != null);
+
+		// If user is not signed in then redirect back to sign-up
+		if (!$scope.authentication.user){
+			$location.path('/signup');
+		}
 	}
 ]);
