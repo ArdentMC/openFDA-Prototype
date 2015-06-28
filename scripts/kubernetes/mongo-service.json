@@ -1,0 +1,16 @@
+{
+  "apiVersion": "v1beta3",
+  "kind": "Service",
+  "metadata": {
+    "name": "mongo-service"
+  },
+  "spec": {
+    "selector": { "type": "mongo" },
+    "ports": [
+      {
+        "port": 27017,
+        "targetPort": 27017
+      }
+    ]
+  }
+}

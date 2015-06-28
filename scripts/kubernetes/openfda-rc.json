@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "name": "openfda-standalone-rc"
+  },
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta3",
+  "spec": {
+    "replicas": 2,
+    "selector": {"type": "openfda", "version": "0.1"},
+    "template": {
+      "metadata": {
+        "labels": { "type": "openfda", "version": "0.1" }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "telescope",
+            "image": "kindafearless/openfda-prototype",
+            "ports": [{
+              "containerPort": 3000
+            }],
+            "env": [
+              {"name": "ROOT_URL", "value": "http://ardentmc18f.com"},
+              {"name": "MONGO_URL", "value": "mongodb://mongo-service:27017/mydb"}
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
