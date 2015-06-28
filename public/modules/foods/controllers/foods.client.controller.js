@@ -174,14 +174,22 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.updateMap = function(item) {
             $scope.clearMapData();
             if (item) {
-                var dis = item.distribution_pattern;
+                var dis = item.distribution_pattern.trim();
                 if (dis) {
-                    var disArray = dis.replace("and",",").replace(" ", "").split(",");
-                    if (disArray.length > 0) {
-                        angular.forEach(disArray, function (d) {
-                            var state = d.trim();
-                            if (state != "" && state.length == 2) {
-                                var stateItem = "US-" + state;
+                    if(dis.toLowerCase() == "nationwide"){
+                        angular.forEach($scope.stateList, function(state){
+                            var stateItem = "US-" + state.CODE;
+                            $scope.mapData.addRow([stateItem]);
+                        });
+                        $scope.map.draw($scope.mapData, $scope.mapOptions);
+                    }
+                    else {
+                        dis = dis.replace("in", "").replace(" and ", " ").trim();
+                        dis = dis.replace(".", "").trim();
+
+                        angular.forEach($scope.stateList, function (state) {
+                            if (dis.indexOf(state.CODE) > (-1)  || dis.indexOf(state.DESC) > (-1)) {
+                                var stateItem = "US-" + state.CODE;
                                 $scope.mapData.addRow([stateItem]);
                             }
                         });
