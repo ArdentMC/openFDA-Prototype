@@ -70,7 +70,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.queryObject = {
             endDate : null,
             startDate: null,
-            state : { CODE: '', DESC: 'State / Provence' }
+            state : { CODE: '', DESC: 'State / Province' }
         }
 
         var orderBy = $filter('orderBy');
@@ -101,7 +101,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.toggleMin = function () {
             var thedate = new Date();
             $scope.minDate = new Date(thedate.getTime() + (((-365.25) * 1000 * 60 * 60 * 24)) * 4);
-            $scope.maxDate = thedate;
+            $scope.maxDate = $scope.queryObject.endDate = thedate;
         };
         $scope.toggleMin();
 
@@ -123,9 +123,9 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             $scope.endDateOpened = true;
         };
 
-        $scope.format = 'yyyy-dd-MM';
+        $scope.format = 'yyyy-MM-dd';
         $scope.dateOptions = {
-            format: 'yyyy-dd-MM',
+            format: 'yyyy-MM-dd',
             autoclose: true,
             startingDay: 1
         };
@@ -198,6 +198,34 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                 }
             }
         }
+
+        $('#startDate').change(function () {
+            var dateobj = $('#startDate');
+            dateobj = angular.element(dateobj);
+            var datestring = dateobj.val();
+            if(!datestring || datestring === ''){
+                return;
+            }
+
+            var theDate = new Date(datestring);
+            if(theDate < $scope.minDate){
+                dateobj.val('Invalid!!!')
+            }
+        });
+
+        $('#endDate').change(function () {
+            var dateobj = $('#endDate');
+            dateobj = angular.element(dateobj);
+            var datestring = dateobj.val();
+            if(!datestring || datestring === ''){
+                return;
+            }
+            var now = new Date();
+            var endDate = new Date(datestring);
+            if( $scope.maxDate < endDate){
+                dateobj.val('Invalid!!!')
+            }
+        });
     }
 ]);
 
