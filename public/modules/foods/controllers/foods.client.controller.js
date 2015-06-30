@@ -156,10 +156,10 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.isSelected = function (state) {
             return $scope.queryObject.state && state.CODE === $scope.queryObject.state.CODE;
         };
-        
-        /* Map related code */        
+
+        /* Map related code */
         $scope.mapData = null;
-        $scope.map = null;        
+        $scope.map = null;
         $scope.mapOptions = {
             region: "US",
             legend: "none",
@@ -167,19 +167,19 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             height: 500,
             backgroundColor: "white",
             datalessRegionColor: "#b9cca7",
-          //  defaultColor: "red",
+            //  defaultColor: "red",
             colorAxis : {minvalue:0, colors:['#F39FA1', '#D41A1F']},
             resolution: "provinces",
             displayMode: 'regions'
         };
 
-        $scope.initMap = function () {            
+        $scope.initMap = function () {
             $scope.mapData = new google.visualization.DataTable();
             $scope.mapData.addColumn('string', 'State');
             $scope.mapData.addColumn('number', 'Selected');
             $scope.mapData.addColumn('number', 'Number of Reports');
             $scope.map = new google.visualization.GeoChart(document.getElementById('foodMap'));
-            
+
             $scope.map.draw($scope.mapData, $scope.mapOptions);
         }
 
