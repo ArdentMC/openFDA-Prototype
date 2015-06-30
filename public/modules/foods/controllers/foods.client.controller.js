@@ -185,7 +185,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.initMap = function () {
             $scope.mapData = new google.visualization.DataTable();
             $scope.mapData.addColumn('string', 'State');
-            $scope.mapData.addColumn('number', 'Selected');
+            $scope.mapData.addColumn('number');
             $scope.mapData.addColumn('number', 'Number of Reports');
             $scope.map = new google.visualization.GeoChart(document.getElementById('foodMap'));
 
@@ -208,6 +208,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             if (item) {
                 var dis = item.distribution_pattern.trim();
                 if (dis) {
+                    var index = 0;
                     if(dis.toLowerCase() == "nationwide"){
                         angular.forEach($scope.stateList, function(state){
                             var stateItem = state.DESC;
@@ -217,6 +218,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                             }
 
                             $scope.mapData.addRow(stateitemvalues);
+                            $scope.mapData.setFormattedValue(index++, 1, '');
                         });
                         $scope.map.draw($scope.mapData, $scope.mapOptions);
                     }
@@ -233,6 +235,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                                 }
 
                                 $scope.mapData.addRow(stateitemvalues);
+                                $scope.mapData.setFormattedValue(index++, 1, '');
                             }
                         });
                         $scope.map.draw($scope.mapData, $scope.mapOptions);
