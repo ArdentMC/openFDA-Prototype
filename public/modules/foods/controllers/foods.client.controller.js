@@ -70,7 +70,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.queryObject = {
             endDate : null,
             startDate: null,
-            state : { CODE: '', DESC: 'State / Province' }
+            state : { CODE: '', DESC: 'State / Province' }//{ CODE: 'AR', DESC: 'Arkansas' }
         }
 
         var orderBy = $filter('orderBy');
@@ -80,6 +80,16 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
 
         // Find a list of FoodEnforcements
         $scope.find = function() {
+            var testing = false;
+            if($scope.queryObject.startDate == null){
+                testing = true;
+                var thedate = new Date('2015/07/01');
+                $scope['queryObject'] = {
+                    endDate : thedate,
+                    startDate: new Date('2015/01/01'),
+                    state : { CODE: 'AR', DESC: 'Arkansas' }
+                }
+            }
             var startdate = $scope.queryObject.startDate.format('yyyymmdd');
             var endDate = $scope.queryObject.endDate.format('yyyymmdd');
             var stateCode = $scope.queryObject.state.CODE;
@@ -92,9 +102,6 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                     value.report_date = new Date(tempdate.substring(0, 4) + '-' + tempdate.substring(4, 6) + '-' + tempdate.substring(6, 8));
                     $scope.foodEnforcementList.push(value);
                     var dis = value.distribution_pattern.trim();
-                    if(dis.toLowerCase() == "nationwide"){
-
-                    }
                     angular.forEach($scope.stateList, function (state) {
                         if(state.reportCount == null){
                             state.reportCount = 0;
@@ -112,7 +119,9 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                     });
                 });
                 orderBy($scope.foodEnforcementList, 'recall_initiation_date', true);
-                $scope.updateMap($scope.foodEnforcementList[0]);
+                if(!testing){
+                    $scope.updateMap($scope.foodEnforcementList[0]);
+                }
             });
         };
 

@@ -95,8 +95,14 @@
         // with the same name as the service.
         beforeEach(inject(function($controller, $rootScope, _$location_, _$stateParams_, _$httpBackend_) {
             // Set a new global scope
+            var thedate = new Date('2015-07-01');
             scope = $rootScope.$new();
             scope['foodEnforcementList'] = [];
+            scope['queryObject'] = {
+                endDate : thedate,
+                startDate: new Date(thedate.getTime()  + (((-30) * 1000 * 60 * 60 * 24)) * 4),
+                state : { CODE: 'AR', DESC: 'Arkansas' }
+            }
 
             // Point global variables to injected services
             $stateParams = _$stateParams_;
@@ -112,7 +118,8 @@
 
         it('$scope.find () should get two food FoodEnforcement reports', function() {
             // Test expected GET request
-            $httpBackend.when('GET', 'http://api.fda.gov/food/enforcement.json?api_key=3mQQKK3ejZDKCKbd0g8tocBZtmn1fNUun966nq3Q&limit=2').respond(200, jsonValues);
+            $httpBackend.when('GET', 'http://api.fda.gov/food/enforcement.json?api_key=3mQQKK3ejZDKCKbd0g8tocBZtmn1fNUun966nq3Q&search=recall_initiation_date:[20150101+TO+20150701]+AND+distribution_pattern:AR&limit=30').respond(200, jsonValues);
+
 
             scope.find();
             $httpBackend.flush();
