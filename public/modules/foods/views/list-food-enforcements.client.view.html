@@ -50,7 +50,7 @@
         </div>
     </nav>
     <div class="container-fluid" style="height:768px; margin:0;padding: 0" data-ng-show="foodEnforcementList.length > 0">
-        <div class="tabbable tabs-left"  style="width:25%;height:100%;position: relative; top:0; float:left;overflow-y:scroll;margin-bottom:0;">
+        <div class="tabbable tabs-left"  style="width:20%;height:100%;position: relative; top:0; float:left;overflow-x: hidden;overflow-y:scroll;margin-bottom:0;">
             <ul id="foodtab" class="nav nav-pills">
                 <li data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}"   style="width:100%">
                     <a href="#tab{{$index + 1}}" data-toggle="tab" ng-click="updateMap(fooditem)" class="list-group-item">
@@ -66,7 +66,7 @@
                 </li>
             </ul>
         </div>
-        <div class="tab-content"  style="height: 100%;width:75%;float:left;position:relative; padding: 10px;display:inline;" >
+        <div class="tab-content"  style="height: 100%;width:80%;float:left;position:relative; padding: 10px;display:inline;" >
             <div class="tab-pane" id="tab{{$index + 1}}" data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}">
                 <h4><b>{{fooditem.voluntary_mandated}} Product Recall</b></h4>
                 <p class="list-group-item-text" data-ng-bind="fooditem.reason_for_recall"></p><br/>
