@@ -201,7 +201,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                 if (dis) {
                     if(dis.toLowerCase() == "nationwide"){
                         angular.forEach($scope.stateList, function(state){
-                            var stateItem = "US-" + state.CODE;
+                            var stateItem = state.DESC;
                             var stateitemvalues = [stateItem, 0, state.reportCount];
                             if(state.CODE == $scope.queryObject.state.CODE){
                                 stateitemvalues[1] = 1;
@@ -217,7 +217,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
 
                         angular.forEach($scope.stateList, function (state) {
                             if (dis.indexOf(state.CODE) > (-1)  || dis.indexOf(state.DESC) > (-1)) {
-                                var stateItem = "US-" + state.CODE;
+                                var stateItem = state.DESC;
                                 var stateitemvalues = [stateItem, 0, state.reportCount];
                                 if(state.CODE == $scope.queryObject.state.CODE){
                                     stateitemvalues[1] = 1;
