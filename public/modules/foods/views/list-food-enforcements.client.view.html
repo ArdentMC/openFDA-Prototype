@@ -12,7 +12,7 @@
                   <input type="text" name="dropdownCode" ng-model="queryObject.state.CODE" hidden required />
                   <div class="dropdown  btn-group" name="stateDropDown">
                       <a id="statedropdownanchor" href="#" data-toggle="dropdown" class="btn dropdown-toggle form-control">{{queryObject.state.DESC}} <b class="caret"></b></a>
-                      <ul class="dropdown-menu">
+                      <ul class="dropdown-menu  scrollable-menu" style="overflow-x:hidden;height:280px;">
                           <li ng-repeat="state in stateList"  ng-class="{selectedState: isSelected(state)}" ng-cloak=""><a href ng-click="setSelected(state)">{{state.DESC}}</a></li>
                       </ul>
                   </div>
