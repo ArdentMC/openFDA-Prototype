@@ -5,7 +5,7 @@
     "name": "openfda-service"
   },
   "spec": {
-    "selector": { "type": "openfda" },
+    "selector": {"type": "openfda"},
     "ports": [
       {
         "port": 80,
@@ -13,16 +13,8 @@
       }
     ],
     "sessionAffinity": "ClientIP",
-    "clusterIP": "10.0.171.239",
     "type": "LoadBalancer"
-  },
-  "status": {
-        "loadBalancer": {
-            "ingress": [
-                {
-                    "ip": "104.154.65.19"
-                }
-            ]
-        }
   }
 }
+
+
