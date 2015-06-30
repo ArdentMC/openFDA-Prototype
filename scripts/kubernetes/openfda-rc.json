@@ -1,20 +1,20 @@
 {
   "metadata": {
-    "name": "openfda-standalone-rc"
+    "name": "openfda-standalone-rc-0.2"
   },
   "kind": "ReplicationController",
   "apiVersion": "v1beta3",
   "spec": {
     "replicas": 2,
-    "selector": {"type": "openfda", "version": "0.1"},
+    "selector": {"type": "openfda", "version": "0.2"},
     "template": {
       "metadata": {
-        "labels": { "type": "openfda", "version": "0.1" }
+        "labels": { "type": "openfda", "version": "0.2" }
       },
       "spec": {
         "containers": [
           {
-            "name": "telescope",
+            "name": "openfda",
             "image": "kindafearless/openfda-prototype",
             "ports": [{
               "containerPort": 3000
