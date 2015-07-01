@@ -118,7 +118,7 @@
 
         it('$scope.find () should get two food FoodEnforcement reports', function() {
             // Test expected GET request
-            $httpBackend.when('GET', 'http://api.fda.gov/food/enforcement.json?api_key=3mQQKK3ejZDKCKbd0g8tocBZtmn1fNUun966nq3Q&search=recall_initiation_date:[20150101+TO+20150701]+AND+distribution_pattern:AR&limit=30').respond(200, jsonValues);
+            $httpBackend.when('GET', 'http://api.fda.gov/food/enforcement.json?api_key=3mQQKK3ejZDKCKbd0g8tocBZtmn1fNUun966nq3Q&search=recall_initiation_date:[20150101+TO+20150701]+AND+distribution_pattern:AR&limit=100').respond(200, jsonValues);
 
 
             scope.find();
