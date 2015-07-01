@@ -8,7 +8,7 @@
 			<!--<h2 style="color:#AD3E33">Welcome</h2>-->
 			<p><h2><b style="color:#AD3E33">Nosh Alert</b></h2> is your resource for discovering food-related incidents reported in your area and around the country.</p>
 			</div>
-			<div class="over-food-collage" style="height:250px;width:40%;border: solid 2px #84b06d;padding:10px;position: relative; top:0; float: right;background-color: #c7c4c7" data-ng-controller="AuthenticationController">
+			<div class="over-food-collage" style="height:250px;width:30%;border: solid 2px #84b06d;padding:10px;position: relative; top:0; float: right;background-color: #c7c4c7" data-ng-controller="AuthenticationController">
 				<form data-ng-submit="signin()" class="ng-pristine ng-valid" autocomplete="off">
 					<fieldset>
 						<div class="form-group">
@@ -23,8 +23,23 @@
 							<button type="submit" class="btn btn-primary" style="background-color: #ad3e33 ">Sign in</button>&nbsp; or&nbsp;
 							<a href="/#!/signup" style="color: #ad3e33 ">Sign up</a>
 						</div>
-						<div class="forgot-password">
+						<div class="forgot-password" style="height:30px;position: relative; float:left;">
 							<a href="/#!/password/forgot" style="color: #ad3e33 ">Forgot your password?</a>
+						</div>
+						<div class="col-sm-2 text-center"  style="padding:0;position: relative; float:right; display:inline;">
+							<a href="/auth/linkedin" class="undecorated-link">
+								<img src="/modules/users/img/buttons/linkedin.png" height="30" width="30">
+							</a>
+						</div>
+						<div class="col-sm-2 text-center"  style="padding:0;position: relative; float:right; display:inline;">
+							<a href="/auth/google" class="undecorated-link">
+								<img src="/modules/users/img/buttons/google.png" height="30" width="30">
+							</a>
+						</div>
+						<div class="col-sm-2 text-center"  style="padding:0;position: relative; float:right; display:inline;">
+							<a href="/auth/facebook" class="undecorated-link">
+								<img src="/modules/users/img/buttons/facebook.png" height="30" width="30">
+							</a>
 						</div>
 						<div data-ng-show="error" class="text-center text-danger">
 							<strong data-ng-bind="error"></strong>
