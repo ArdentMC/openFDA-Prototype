@@ -24,6 +24,15 @@
      /*width: 230px;*/
  }
 
+.food-collage-image {
+    -webkit-filter: grayscale(.5) saturate(0.8) opacity(0.5);
+    height:100%;
+    width:100%;
+    position:relative;
+    top:0;
+    left:0
+  }
+
 .over-food-collage {
     position:relative;
     top:0;
