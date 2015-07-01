@@ -70,7 +70,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.queryObject = {
             endDate : null,
             startDate: null,
-            state : { CODE: '', DESC: 'State / Provence' }
+            state : { CODE: '', DESC: 'State / Province' }//{ CODE: 'AR', DESC: 'Arkansas' }
         }
 
         var orderBy = $filter('orderBy');
@@ -80,6 +80,16 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
 
         // Find a list of FoodEnforcements
         $scope.find = function() {
+            var testing = false;
+            if($scope.queryObject.startDate == null){
+                testing = true;
+                var thedate = new Date('2015/07/01');
+                $scope['queryObject'] = {
+                    endDate : thedate,
+                    startDate: new Date('2015/01/01'),
+                    state : { CODE: 'AR', DESC: 'Arkansas' }
+                }
+            }
             var startdate = $scope.queryObject.startDate.format('yyyymmdd');
             var endDate = $scope.queryObject.endDate.format('yyyymmdd');
             var stateCode = $scope.queryObject.state.CODE;
@@ -91,9 +101,27 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                     tempdate = value.report_date;
                     value.report_date = new Date(tempdate.substring(0, 4) + '-' + tempdate.substring(4, 6) + '-' + tempdate.substring(6, 8));
                     $scope.foodEnforcementList.push(value);
+                    var dis = value.distribution_pattern.trim();
+                    angular.forEach($scope.stateList, function (state) {
+                        if(state.reportCount == null){
+                            state.reportCount = 0;
+                        }
+                        if(dis.toLowerCase() == "nationwide"){
+                            state.reportCount += 1;
+                        }
+                        else{
+                            dis = dis.replace("in", "").replace(" and ", " ").trim();
+                            dis = dis.replace(".", "").trim();
+                            if (dis.indexOf(state.CODE) > (-1)  || dis.indexOf(state.DESC) > (-1)) {
+                                state.reportCount += 1;
+                            }
+                        }
+                    });
                 });
                 orderBy($scope.foodEnforcementList, 'recall_initiation_date', true);
-                $scope.updateMap($scope.foodEnforcementList[0]);
+                if(!testing){
+                    $scope.updateMap($scope.foodEnforcementList[0]);
+                }
             });
         };
 
@@ -101,7 +129,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.toggleMin = function () {
             var thedate = new Date();
             $scope.minDate = new Date(thedate.getTime() + (((-365.25) * 1000 * 60 * 60 * 24)) * 4);
-            $scope.maxDate = thedate;
+            $scope.maxDate = $scope.queryObject.endDate = thedate;
         };
         $scope.toggleMin();
 
@@ -123,9 +151,9 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             $scope.endDateOpened = true;
         };
 
-        $scope.format = 'yyyy-dd-MM';
+        $scope.format = 'yyyy-MM-dd';
         $scope.dateOptions = {
-            format: 'yyyy-dd-MM',
+            format: 'yyyy-MM-dd',
             autoclose: true,
             startingDay: 1
         };
@@ -137,26 +165,30 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.isSelected = function (state) {
             return $scope.queryObject.state && state.CODE === $scope.queryObject.state.CODE;
         };
-        
-        /* Map related code */        
+
+        /* Map related code */
         $scope.mapData = null;
-        $scope.map = null;        
+        $scope.map = null;
         $scope.mapOptions = {
             region: "US",
             legend: "none",
             width: 700,
             height: 500,
             backgroundColor: "white",
-            datalessRegionColor: "#E8FFD1",
-            defaultColor: "red",
-            resolution: "provinces"
+            datalessRegionColor: "#b9cca7",
+            //  defaultColor: "red",
+            colorAxis : {minvalue:0, colors:['#F39FA1', '#D41A1F']},
+            resolution: "provinces",
+            displayMode: 'regions'
         };
 
-        $scope.initMap = function () {            
+        $scope.initMap = function () {
             $scope.mapData = new google.visualization.DataTable();
             $scope.mapData.addColumn('string', 'State');
+            $scope.mapData.addColumn('number');
+            $scope.mapData.addColumn('number', 'Number of Reports');
             $scope.map = new google.visualization.GeoChart(document.getElementById('foodMap'));
-            
+
             $scope.map.draw($scope.mapData, $scope.mapOptions);
         }
 
@@ -176,10 +208,17 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             if (item) {
                 var dis = item.distribution_pattern.trim();
                 if (dis) {
+                    var index = 0;
                     if(dis.toLowerCase() == "nationwide"){
                         angular.forEach($scope.stateList, function(state){
-                            var stateItem = "US-" + state.CODE;
-                            $scope.mapData.addRow([stateItem]);
+                            var stateItem = state.DESC;
+                            var stateitemvalues = [stateItem, 0, state.reportCount];
+                            if(state.CODE == $scope.queryObject.state.CODE){
+                                stateitemvalues[1] = 1;
+                            }
+
+                            $scope.mapData.addRow(stateitemvalues);
+                            $scope.mapData.setFormattedValue(index++, 1, '');
                         });
                         $scope.map.draw($scope.mapData, $scope.mapOptions);
                     }
@@ -189,8 +228,14 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
 
                         angular.forEach($scope.stateList, function (state) {
                             if (dis.indexOf(state.CODE) > (-1)  || dis.indexOf(state.DESC) > (-1)) {
-                                var stateItem = "US-" + state.CODE;
-                                $scope.mapData.addRow([stateItem]);
+                                var stateItem = state.DESC;
+                                var stateitemvalues = [stateItem, 0, state.reportCount];
+                                if(state.CODE == $scope.queryObject.state.CODE){
+                                    stateitemvalues[1] = 1;
+                                }
+
+                                $scope.mapData.addRow(stateitemvalues);
+                                $scope.mapData.setFormattedValue(index++, 1, '');
                             }
                         });
                         $scope.map.draw($scope.mapData, $scope.mapOptions);
@@ -198,6 +243,34 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                 }
             }
         }
+
+        $('#startDate').change(function () {
+            var dateobj = $('#startDate');
+            dateobj = angular.element(dateobj);
+            var datestring = dateobj.val();
+            if(!datestring || datestring === ''){
+                return;
+            }
+
+            var theDate = new Date(datestring);
+            if(theDate < $scope.minDate){
+                dateobj.val('Invalid!!!')
+            }
+        });
+
+        $('#endDate').change(function () {
+            var dateobj = $('#endDate');
+            dateobj = angular.element(dateobj);
+            var datestring = dateobj.val();
+            if(!datestring || datestring === ''){
+                return;
+            }
+            var now = new Date();
+            var endDate = new Date(datestring);
+            if( $scope.maxDate < endDate){
+                dateobj.val('Invalid!!!')
+            }
+        });
     }
 ]);
 

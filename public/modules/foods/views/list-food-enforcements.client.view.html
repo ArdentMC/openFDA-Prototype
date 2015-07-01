@@ -2,23 +2,23 @@
     <div class="page-header" style="margin-bottom:0">
         <h1>Food Enforcements</h1>
     </div>
-    <nav class="navbar navbar-default" style="background-color:#f1f1f1">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="">Search By</a>
+    <nav class="navbar navbar-default" style="background-color:#f1f1f1;padding:3px">
+        <div class="navbar-header" style="width:198px;position:relative;float:left;display:inline">
+            <a class="navbar-brand" href="">Select:</a>
         </div>
-        <div style="width:Calc(100% - 113.047px);position:relative;float:left;display:inline">
+        <div style="width:Calc(100% - 198px);position:relative;float:left;display:inline">
             <form id="foodSearchForm" name="foodSearchForm"  novalidate class="navbar-form navbar-left" role="search" style="width:100%; height: 60px" ng-submit="find()">
-                <div class="form-group" style="height:100%;margin-right:25px;position:inline-block;vertical-align:top" ng-class="{ 'has-error' : foodSearchForm.stateDropDown.$invalid && !foodSearchForm.stateDropDown.$pristine }">
+                <div class="form-group" style="height:100%;margin-right:25px" ng-class="{ 'has-error' : foodSearchForm.stateDropDown.$invalid && !foodSearchForm.stateDropDown.$pristine }">
                   <input type="text" name="dropdownCode" ng-model="queryObject.state.CODE" hidden required />
                   <div class="dropdown  btn-group" name="stateDropDown">
                       <a id="statedropdownanchor" href="#" data-toggle="dropdown" class="btn dropdown-toggle form-control">{{queryObject.state.DESC}} <b class="caret"></b></a>
-                      <ul class="dropdown-menu">
+                      <ul class="dropdown-menu  scrollable-menu" style="overflow-x:hidden;height:280px;">
                           <li ng-repeat="state in stateList"  ng-class="{selectedState: isSelected(state)}" ng-cloak=""><a href ng-click="setSelected(state)">{{state.DESC}}</a></li>
                       </ul>
                   </div>
                   <div class="text-danger" ng-show="foodSearchForm.dropdownCode.$error.required">Please select a state.</div>
                 </div>
-                <div class="form-group" style="height:100%;width:270px;padding:0;position:inline-block;vertical-align:top">
+                <div class="form-group" style="height:100%;width:270px;padding:0">
                   <div style="overflow:hidden">
                     <input id="startDate" name="startDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="Start date" ng-model="queryObject.startDate" is-open="startDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
                     <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
@@ -27,14 +27,11 @@
                   </div>
                   <div class="text-danger" ng-show="foodSearchForm.startDate.$invalid">
                       <span class="text-danger" ng-show="foodSearchForm.startDate.$error.required">
-                          Start Date is required
-                      </span>
-                      <span class="text-danger" ng-show="foodSearchForm.startDate.$invalid && foodSearchForm.startDate.$dirty">
                           Enter a valid start date.
                       </span>
                  </div>
                 </div>
-                <div class="form-group" style="height:100%;width:270px;padding:0;position:inline-block;vertical-align:top">
+                <div class="form-group" style="height:100%;width:270px;padding:0">
                   <div style="overflow:hidden">
                     <input id="endDate" name="endDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="End date" ng-model="queryObject.endDate" is-open="endDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
                     <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
@@ -43,9 +40,6 @@
                   </div>
                   <div class="text-danger" ng-show="foodSearchForm.endDate.$invalid">
                     <span class="text-danger" ng-show="foodSearchForm.endDate.$error.required">
-                        End Date is required
-                    </span>
-                    <span class="text-danger" ng-show="foodSearchForm.endDate.$invalid && foodSearchForm.endDate.$dirty">
                         Enter a valid end date.
                     </span>
                   </div>
@@ -56,7 +50,7 @@
         </div>
     </nav>
     <div class="container-fluid" style="height:768px; margin:0;padding: 0" data-ng-show="foodEnforcementList.length > 0">
-        <div class="tabbable tabs-left"  style="width:25%;height:100%;position: relative; top:0; float:left;overflow-y:scroll;margin-bottom:0;">
+        <div class="tabbable tabs-left"  style="width:20%;height:100%;position: relative; top:0; float:left;overflow-x: hidden;overflow-y:scroll;margin-bottom:0;">
             <ul id="foodtab" class="nav nav-pills">
                 <li data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}"   style="width:100%">
                     <a href="#tab{{$index + 1}}" data-toggle="tab" ng-click="updateMap(fooditem)" class="list-group-item">
@@ -72,7 +66,7 @@
                 </li>
             </ul>
         </div>
-        <div class="tab-content"  style="height: 100%;width:75%;float:left;position:relative; padding: 10px;display:inline;" >
+        <div class="tab-content"  style="height: 100%;width:80%;float:left;position:relative; padding: 10px;display:inline;" >
             <div class="tab-pane" id="tab{{$index + 1}}" data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}">
                 <h4><b>{{fooditem.voluntary_mandated}} Product Recall</b></h4>
                 <p class="list-group-item-text" data-ng-bind="fooditem.reason_for_recall"></p><br/>
