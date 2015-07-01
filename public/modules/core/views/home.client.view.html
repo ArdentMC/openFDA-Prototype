@@ -1,14 +1,14 @@
 <section data-ng-controller="HomeController">
-
-	<div class="container" style="height:600px;">
-		<div class="food-collage" style="height: 250px; width: 100%">
-		</div>
-		<div class="container"  style="height: 250px; width: 100%;padding:0px;margin-top: 10px;">
-			<div class="over-food-collage" style="height:250px;width:40%;border: solid 2px  #84b06d;padding:10px;position: relative; top:0; float:left;background-color: #c7c4c7">
-			<!--<h2 style="color:#AD3E33">Welcome</h2>-->
-			<p><h2><b style="color:#AD3E33">Nosh Alert</b></h2> is your resource for discovering food-related incidents reported in your area and around the country.</p>
+	<div class="container" style="height:375px;width:90%;margin: 10px">
+		<div class="food-collage" style="height: 350px; width: Calc(70% - 10px);float:left;margin-top: 10px;margin-right:10px">
+			<img src="/modules/core/img/brand/food-collage.jpg" height="100%" width="100%" style="position:relative;top:0;left:0">
+			<div class="over-food-collage" style="height:130px;width:450px;border: solid 2px  #84b06d;padding:10px;position: absolute; top:225px; float:left;margin-left:10px;background-color: #c7c4c7">
+				<!--<h2 style="color:#AD3E33">Welcome</h2>-->
+				<p></p><h2><b style="color:#AD3E33">NOSHAlert</b></h2> is your resource for discovering food-related incidents reported in your area and around the country.<p></p>
 			</div>
-			<div class="over-food-collage" style="height:250px;width:30%;border: solid 2px #84b06d;padding:10px;position: relative; top:0; float: right;background-color: #c7c4c7" data-ng-controller="AuthenticationController">
+		</div>
+		<div class="container"  style="height: 350px; width: Calc(30% - 10px);padding:0px;margin-top: 10px;margin-left:10px;position: relative; top:0; float: left;">
+			<div class="over-food-collage" style="height:100%;width:100%;border: solid 2px #84b06d;background-color: #c7c4c7;padding:10px" data-ng-controller="AuthenticationController">
 				<form data-ng-submit="signin()" class="ng-pristine ng-valid" autocomplete="off">
 					<fieldset>
 						<div class="form-group">
@@ -19,14 +19,14 @@
 							<label for="password">Password</label>
 							<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 						</div>
-						<div class="text-center form-group">
+						<div class="text-center form-group" style="margin-top:50px">
 							<button type="submit" class="btn btn-primary" style="background-color: #ad3e33 ">Sign in</button>&nbsp; or&nbsp;
 							<a href="/#!/signup" style="color: #ad3e33 ">Sign up</a>
 						</div>
-						<div class="forgot-password" style="height:30px;position: relative; float:left;">
+						<div class="forgot-password" style="height:30px;position: relative; float:left;margin-top:5px">
 							<a href="/#!/password/forgot" style="color: #ad3e33 ">Forgot your password?</a>
 						</div>
-						<div class="col-sm-2 text-center"  style="padding:0;position: relative; float:right; display:inline;">
+						<div class="col-sm-1 text-center"  style="padding:0;position: relative; float:right; display:inline;">
 							<a id="linkLogin" href="/auth/linkedin" class="undecorated-link">
 								<img src="/modules/users/img/buttons/linkedin.png" height="30" width="30">
 							</a>
@@ -36,7 +36,7 @@
 								<img src="/modules/users/img/buttons/google.png" height="30" width="30">
 							</a>
 						</div>
-						<div class="col-sm-2 text-center"  style="padding:0;position: relative; float:right; display:inline;">
+						<div class="col-sm-1 text-center"  style="padding:0;position: relative; float:right; display:inline;">
 							<a id="faceLogin" href="/auth/facebook" class="undecorated-link">
 								<img src="/modules/users/img/buttons/facebook.png" height="30" width="30">
 							</a>
@@ -48,12 +48,11 @@
 				</form>
 			</div>
 		</div>
-		<div class="container" style="align-self: center;margin-top: 25px;width:70%">
-			<button type="button" class="btn btn-default" style="width:100%;height:100%;border:solid 2px #84b06d;background-color: #c7c4c7" ng-click="gotoMore()">Find Out What NoshAlert can Do For You</button>
-			<!--<h4>Find Out What NoshAlert can Do For You</h4>-->
-		</div>
 	</div>
-
+	<div class="container" style="align-self: center;margin-top: 25px;width:90%;margin: 10px">
+		<button type="button" class="btn btn-default" style="width:100%;height:100%;border:solid 2px #84b06d;background-color: #c7c4c7" ng-click="gotoMore()">Find Out What NoshAlert can Do For You</button>
+		<!--<h4>Find Out What NoshAlert can Do For You</h4>-->
+	</div>
 	<div class="container"  ng-hide="true">
 		<div class="col-md-3" ng-hide="true">
 			<h2>
@@ -81,7 +80,7 @@
 		</div>
 	</div>
 
-	<div class="well" style="background-color: #DAD7DB">
+	<div class="well" style="background-color: #383738; color:#DAD7DB;height: Calc(100% - 375px)">
 		<a name="moreinfo"/>
 		<div class="container">
 			<h2>Additional Information</h2>
