@@ -20,5 +20,8 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 			// call $anchorScroll()
 			$anchorScroll();
 		}
+		$('#faceLogin').attr("title", 'Login with Focebook.');
+		$('#googleLogin').attr("title", 'Login with Google.');
+		$('#linkLogin').attr("title", 'Login with LinkedIn.');
 	}
 ]);
