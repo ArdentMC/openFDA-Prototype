@@ -3,12 +3,12 @@
 	<div class="container" style="height:600px;">
 		<div class="food-collage" style="height: 250px; width: 100%">
 		</div>
-		<div class="container"  style="height: 250px; width: 100%;padding:0px;">
-			<div class="over-food-collage" style="height:250px;width:40%;border: solid 1px;padding:10px;position: relative; top:0; float:left;background-color: #DAD7DB">
-			<h2 style="color:#AD3E33">Welcome</h2>
-			<p><b style="color:#84B06D">NoshAlert</b> is your resource for discovering food-related incidents reported in your area and around the country.</p>
+		<div class="container"  style="height: 250px; width: 100%;padding:0px;margin-top: 10px;">
+			<div class="over-food-collage" style="height:250px;width:40%;border: solid 2px  #84b06d;padding:10px;position: relative; top:0; float:left;background-color: #c7c4c7">
+			<!--<h2 style="color:#AD3E33">Welcome</h2>-->
+			<p><h2><b style="color:#AD3E33">Nosh Alert</b></h2> is your resource for discovering food-related incidents reported in your area and around the country.</p>
 			</div>
-			<div class="over-food-collage" style="height:250px;width:40%;border: solid 1px;padding:10px;position: relative; top:0; float: right;background-color: #DAD7DB" data-ng-controller="AuthenticationController">
+			<div class="over-food-collage" style="height:250px;width:40%;border: solid 2px #84b06d;padding:10px;position: relative; top:0; float: right;background-color: #c7c4c7" data-ng-controller="AuthenticationController">
 				<form data-ng-submit="signin()" class="ng-pristine ng-valid" autocomplete="off">
 					<fieldset>
 						<div class="form-group">
@@ -20,11 +20,11 @@
 							<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 						</div>
 						<div class="text-center form-group">
-							<button type="submit" class="btn btn-primary">Sign in</button>&nbsp; or&nbsp;
-							<a href="/#!/signup">Sign up</a>
+							<button type="submit" class="btn btn-primary" style="background-color: #ad3e33 ">Sign in</button>&nbsp; or&nbsp;
+							<a href="/#!/signup" style="color: #ad3e33 ">Sign up</a>
 						</div>
 						<div class="forgot-password">
-							<a href="/#!/password/forgot">Forgot your password?</a>
+							<a href="/#!/password/forgot" style="color: #ad3e33 ">Forgot your password?</a>
 						</div>
 						<div data-ng-show="error" class="text-center text-danger">
 							<strong data-ng-bind="error"></strong>
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div class="container" style="align-self: center;margin-top: 25px;width:70%">
-			<button type="button" class="btn btn-default" style="width:100%;height:100%;border:solid 1px #000000">Find Out What NoshAlert can Do For You</button>
+			<button type="button" class="btn btn-default" style="width:100%;height:100%;border:solid 2px #84b06d;background-color: #c7c4c7" ng-click="gotoMore()">Find Out What NoshAlert can Do For You</button>
 			<!--<h4>Find Out What NoshAlert can Do For You</h4>-->
 		</div>
 	</div>
@@ -67,6 +67,7 @@
 	</div>
 
 	<div class="well" style="background-color: #DAD7DB">
+		<a name="moreinfo"/>
 		<div class="container">
 			<h2>Additional Information</h2>
 			<p>

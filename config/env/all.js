@@ -2,7 +2,7 @@
 
 module.exports = {
 	app: {
-		title: 'openFDA-prototype',
+		title: 'Nosh Alert',
 		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
 		keywords: 'openFDA, MongoDB, Express, AngularJS, Node.js'
 	},

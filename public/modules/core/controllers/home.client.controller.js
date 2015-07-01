@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$location',
-	function($scope, Authentication, $location) {
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$location', '$anchorScroll',
+	function($scope, Authentication, $location, $anchorScroll) {
 		// This provides Authentication context.
 		if(Authentication.user == null || Authentication.user._id == null){
 			Authentication.user = null;
@@ -13,6 +13,12 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 		if ($scope.authentication.user){
 			var foodpath = location.href + 'foodEnforcements';
 			location.replace(foodpath);
+		}
+
+		$scope.gotoMore = function(){
+			$location.hash('moreinfo');
+			// call $anchorScroll()
+			$anchorScroll();
 		}
 	}
 ]);
