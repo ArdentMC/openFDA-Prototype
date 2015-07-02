@@ -1,3 +1,6 @@
+body{
+    background-image: url('../img/brand/noshFoodBG.png');
+}
 .content {
 }
 
@@ -15,13 +18,13 @@
 }
 
 .food-collage {
-     background-image: url('../img/brand/food-collage.jpg') /*../img/brand/food-collage.jpg*/;
-     background-repeat: no-repeat;
-     background-position: center;
-    -webkit-filter: grayscale(.5) saturate(0.8) opacity(0.5);
-     /*height: 60px;*/
-     /*width: 230px;*/
- }
+    -webkit-filter: grayscale(.5) saturate(0.5) opacity(0.5);
+    height:100%;
+    width:100%;
+    position:relative;
+    top:0;
+    left:0
+  }
 
 .over-food-collage {
     position:relative;
