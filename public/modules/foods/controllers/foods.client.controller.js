@@ -175,9 +175,9 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             width: 700,
             height: 500,
             backgroundColor: "#DAD7DB",
-            datalessRegionColor: "#b9cca7",
+            datalessRegionColor: "#C7C4C7",
             //  defaultColor: "red",
-            colorAxis : {minvalue:0, colors:['#F39FA1', '#D41A1F']},
+            colorAxis : {minvalue:0, colors:['#cd8b84', '#AD3E33']},
             resolution: "provinces",
             displayMode: 'regions'
         };
