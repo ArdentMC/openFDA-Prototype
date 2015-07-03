@@ -1,23 +1,17 @@
 <section class="container" data-ng-controller="AuthenticationController">
-	<h3 class="col-md-12 text-center">Sign up using your social accounts</h3>
+	<h4 class="col-md-12 text-center"  style="margin-top:10px;margin-bottom:7px">Sign up using your social accounts</h4>
 	<div class="col-md-12 text-center">
 		<a href="/auth/facebook" class="undecorated-link">
-			<img src="/modules/users/img/buttons/facebook.png">
+			<img src="/modules/users/img/buttons/facebook.png"  height="30" width="30">
 		</a>
-		<!--<a href="/auth/twitter" class="undecorated-link">
-			<img src="/modules/users/img/buttons/twitter.png">
-		</a>-->
 		<a href="/auth/google" class="undecorated-link">
-			<img src="/modules/users/img/buttons/google.png">
+			<img src="/modules/users/img/buttons/google.png"  height="30" width="30">
 		</a>
 		<a href="/auth/linkedin" class="undecorated-link">
-			<img src="/modules/users/img/buttons/linkedin.png">
+			<img src="/modules/users/img/buttons/linkedin.png"  height="30" width="30">
 		</a>
-		<!--<a href="/auth/github" class="undecorated-link">
-			<img src="/modules/users/img/buttons/github.png">
-		</a>-->
 	</div>
-	<h3 class="col-md-12 text-center">Or with a username and email</h3>
+	<h4 class="col-md-12 text-center" style="margin-top:7px;margin-bottom:7px;">Or with a username and email</h4>
 	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
 		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
 			<fieldset>
@@ -58,8 +52,13 @@
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Create a password">
 				</div>
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
-					<a href="/#!/signin" class="show-signup">Sign in</a>
+					<button type="submit" class="btn btn-large btn-primary"
+							style="background-color: #ad3e33;display:inline">Sign up
+					</button>
+					&nbsp; or&nbsp;
+					<a href="/#!/signin" type="button" class="btn btn-large btn-primary"
+					   style="background-color: #777678 ">Sign in</a>
+
 				</div>
 				<div data-ng-show="error" class="text-center text-danger">
 					<strong data-ng-bind="error"></strong>
