@@ -7,8 +7,8 @@
 angular.module('foods').run(['Menus',
     function(Menus) {
         // Set top bar menu items
-     //   Menus.addMenuItem('topbar', 'Foods', 'foodEnforcements', 'dropdown');
-     //   Menus.addSubMenuItem('topbar', 'foodEnforcements', 'List Enforcements', 'foodEnforcements');
+        Menus.addMenuItem('topbar', 'Foods', 'foodEnforcements', 'dropdown');
+        Menus.addSubMenuItem('topbar', 'foodEnforcements', 'List Enforcements', 'foodEnforcements');
         //  Menus.addSubMenuItem('topbar', 'articles', 'New Article', 'articles/create');
     }
 ]);

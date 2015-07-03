@@ -172,8 +172,8 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
         $scope.mapOptions = {
             region: "US",
             legend: "none",
-            width: 700,
-            height: 500,
+            width: '100%',
+            height: '100%',
             backgroundColor: "#DAD7DB",
             datalessRegionColor: "#C7C4C7",
             //  defaultColor: "red",
@@ -189,6 +189,9 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             $scope.mapData.addColumn('number', 'Number of Reports');
             $scope.map = new google.visualization.GeoChart(document.getElementById('foodMap'));
 
+            $scope.mapOptions.width = ($(window).innerWidth() - 250) * .90;
+            $scope.mapOptions.height = 350;
+
             $scope.map.draw($scope.mapData, $scope.mapOptions);
         }
 
@@ -200,12 +203,20 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
                 }
             } else {
                 $scope.initMap();
+                $(window).resize(function () {
+                    google.maps.event.trigger($scope.map, "resize");
+                    var item = $scope.foodEnforcementList[$scope.selectedItemIndex];
+                    if(item){
+                        $scope.updateMap(item);
+                    }
+                });
             }
         }
 
         $scope.updateMap = function(item) {
             $scope.clearMapData();
             if (item) {
+                $scope.selectedItemIndex = $scope.foodEnforcementList.indexOf(item);
                 var dis = item.distribution_pattern.trim();
                 if (dis) {
                     var index = 0;

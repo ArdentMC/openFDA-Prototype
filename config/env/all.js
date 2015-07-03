@@ -14,6 +14,7 @@ module.exports = {
 		lib: {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap-ardent.css',
+				'public/lib/bootstrap/dist/css/bootstrap-responsive.css',
 			],
 			js: [
 				'public/lib/mit/dateFormat.js',

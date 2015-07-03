@@ -10,10 +10,10 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 		$scope.authentication = Authentication;
 
 		// If user is not signed in then redirect back to sign-up
-		if ($scope.authentication.user){
-			var foodpath = location.href + 'foodEnforcements';
-			location.replace(foodpath);
-		}
+		//if ($scope.authentication.user){
+		//	var foodpath = location.href + 'foodEnforcements';
+		//	location.replace(foodpath);
+		//}
 
 		$scope.gotoMore = function(){
 			$location.hash('moreinfo');

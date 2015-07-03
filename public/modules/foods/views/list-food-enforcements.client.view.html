@@ -3,54 +3,59 @@
         <h1>Food Enforcements</h1>
     </div>
     <nav class="navbar navbar-default" style="color:white;background-color: #383738;">
-        <div class="navbar-header" style="width:198px;position:relative;float:left;display:inline">
-            <h2 style="margin-left:35px">Select:</h2>
-        </div>
-        <div style="width:Calc(100% - 198px);position:relative;float:left;display:inline;margin-top:15px">
-            <form id="foodSearchForm" name="foodSearchForm"  novalidate class="navbar-form navbar-left" role="search" style="width:100%; height: 60px" ng-submit="find()">
-                <div class="form-group" style="height:100%;margin-right:25px" ng-class="{ 'has-error' : foodSearchForm.stateDropDown.$invalid && !foodSearchForm.stateDropDown.$pristine }">
-                  <input type="text" name="dropdownCode" ng-model="queryObject.state.CODE" hidden required />
-                  <div class="dropdown  btn-group" name="stateDropDown">
-                      <a id="statedropdownanchor" href="#" data-toggle="dropdown" class="btn dropdown-toggle form-control">{{queryObject.state.DESC}} <b class="caret"></b></a>
-                      <ul class="dropdown-menu  scrollable-menu" style="overflow-x:hidden;height:280px;">
-                          <li ng-repeat="state in stateList"  ng-class="{selectedState: isSelected(state)}" ng-cloak=""><a href ng-click="setSelected(state)">{{state.DESC}}</a></li>
-                      </ul>
-                  </div>
-                  <div class="text-danger" ng-show="foodSearchForm.dropdownCode.$error.required">Please select a state.</div>
+        <div class="navbar-inner" style=";border: none 1px; height:40px">
+            <div class="container" style="padding-top:0;padding-bottom:0; border: none 1px; height:40px">
+                <div class="row">
+                    <div class="col-md-2" style="padding:6px;padding-left:0;border: none 1px;">
+                        <h3 style="margin:0;">Select:</h3>
+                    </div>
+                    <div class="col-md-10" style="padding:3px;padding-left:0;height:40px;border: none 1px;">
+                        <form id="foodSearchForm" name="foodSearchForm"  novalidate class="navbar-form navbar-left row" role="search" style="width:100%;height:40px;margin:0;padding:0;border: none 1px;" ng-submit="find()">
+                            <div class="form-group  col-md-2" style="padding-left:0" ng-class="{ 'has-error' : foodSearchForm.stateDropDown.$invalid && !foodSearchForm.stateDropDown.$pristine }">
+                                <input type="text" name="dropdownCode" ng-model="queryObject.state.CODE" hidden required />
+                                <div class="dropdown  btn-group" name="stateDropDown">
+                                    <a id="statedropdownanchor" href="#" data-toggle="dropdown" class="btn dropdown-toggle form-control">{{queryObject.state.DESC}} <b class="caret"></b></a>
+                                    <ul class="dropdown-menu  scrollable-menu" style="overflow-x:hidden;height:280px;">
+                                        <li ng-repeat="state in stateList"  ng-class="{selectedState: isSelected(state)}" ng-cloak=""><a href ng-click="setSelected(state)">{{state.DESC}}</a></li>
+                                    </ul>
+                                </div>
+                                <div class="text-danger" ng-show="foodSearchForm.dropdownCode.$error.required">Select a state.</div>
+                            </div>
+                            <div class="form-group  col-md-3" style="width:245px;padding:0">
+                                <div style="overflow:hidden">
+                                    <input id="startDate" name="startDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="Start date" ng-model="queryObject.startDate" is-open="startDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
+                                    <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
+                                        <button type="button" class="btn btn-default" ng-click="startDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                                <div class="text-danger" ng-show="foodSearchForm.startDate.$invalid">
+                                      <span class="text-danger" ng-show="foodSearchForm.startDate.$error.required">
+                                          Enter a valid start date.
+                                      </span>
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-3" style="width:245px;padding:0;margin-right:10%">
+                                <div style="overflow:hidden">
+                                    <input id="endDate" name="endDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="Start date" ng-model="queryObject.endDate" is-open="endDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
+                                    <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
+                                        <button type="button" class="btn btn-default" ng-click="endDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                                <div class="text-danger" ng-show="foodSearchForm.endDate.$invalid">
+                                      <span class="text-danger" ng-show="foodSearchForm.endDate.$error.required">
+                                          Enter a valid end date.
+                                      </span>
+                                </div>
+                            </div>
+                            <button type="submit"  class="btn " style="float:left;border:solid 3px #84b06d;width: 120px;height:34px;background-color:#777678;color:#DAD7DB" ng-disabled="foodSearchForm.$invalid">Submit</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group" style="height:100%;width:270px;padding:0">
-                  <div style="overflow:hidden">
-                    <input id="startDate" name="startDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="Start date" ng-model="queryObject.startDate" is-open="startDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
-                    <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
-                        <button type="button" class="btn btn-default" ng-click="startDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                  </div>
-                  <div class="text-danger" ng-show="foodSearchForm.startDate.$invalid">
-                      <span class="text-danger" ng-show="foodSearchForm.startDate.$error.required">
-                          Enter a valid start date.
-                      </span>
-                 </div>
-                </div>
-                <div class="form-group" style="height:100%;width:270px;padding:0">
-                  <div style="overflow:hidden">
-                    <input id="endDate" name="endDate" style="width:200px;position:relative;float:left"  type="text" class="form-control" datepicker-popup="{{format}}" placeholder="End date" ng-model="queryObject.endDate" is-open="endDateOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true"/>
-                    <span class="input-group-btn" style="width:40px;position:relative;float:left;display:inline">
-                        <button type="button" class="btn btn-default" ng-click="endDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                  </div>
-                  <div class="text-danger" ng-show="foodSearchForm.endDate.$invalid">
-                    <span class="text-danger" ng-show="foodSearchForm.endDate.$error.required">
-                        Enter a valid end date.
-                    </span>
-                  </div>
-                </div>
-
-                <button type="submit"  class="btn " style="float:right;border:solid 3px #84b06d;width: 120px;height:45px;background-color:#777678;color:#DAD7DB" ng-disabled="foodSearchForm.$invalid">Submit</button>
-            </form>
+            </div>
         </div>
     </nav>
-    <div class="container-fluid" style="height:768px; margin:0;padding: 0" data-ng-show="foodEnforcementList.length > 0">
-        <div class="tabbable tabs-left"  style="width:20%;height:100%;position: relative; top:0; float:left;overflow-x: hidden;overflow-y:scroll;margin-bottom:0;">
+    <div class="container-fluid" style="height:700px; margin:0;padding: 0;border: solid 2px;" data-ng-show="foodEnforcementList.length > 0">
+        <div class="tabbable tabs-left"  style="width:245px;height:100%;position: relative; top:0; float:left;overflow-x: hidden;overflow-y:scroll;margin-bottom:0;">
             <ul id="foodtab" class="nav nav-pills">
                 <li data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}" style="width:100%">
                     <a href="#tab{{$index + 1}}" id="tabanchor{{$index + 1}}" data-toggle="tab" ng-click="updateMap(fooditem)" class="list-group-item">
@@ -66,8 +71,8 @@
                 </li>
             </ul>
         </div>
-        <div class="tab-content"  style="height: 100%;width:80%;float:left;position:relative; padding: 10px;display:inline;" >
-            <div class="tab-pane" id="tab{{$index + 1}}" data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}">
+        <div class="tab-content"  style="height: 100%;width:Calc(100% - 250px);float:left;position:relative; padding: 10px;display:inline" >
+            <div class="tab-pane" id="tab{{$index + 1}}" data-ng-repeat="fooditem in foodEnforcementList" ng-class="{active: $index == 0}" style=";height:350px;margin-bottom:0;overflow-y:scroll">
                 <h4><b>{{fooditem.voluntary_mandated}} Product Recall</b></h4>
                 <p class="list-group-item-text" data-ng-bind="fooditem.reason_for_recall"></p><br/>
                 <p class="list-group-item-text"><b>Product Decription: </b>{{fooditem.product_description}}</p><br/>
@@ -77,7 +82,8 @@
                 <p class="list-group-item-text"><b>Recall Date: </b>{{fooditem.recall_initiation_date | date:'yyyy-MM-dd'}}</p>
                 <p class="list-group-item-text"><b>Recall Status: </b>{{fooditem.status}}</p>
             </div>
-            <div id="foodMap" style="margin-left:150px"></div>
+            <div id="foodMap" class="content text-center"  style="height: Calc(100% - 350px);width:90%;float:left;position:relative;margin-top:-50px;" >
+            </div>
         </div>
     </div>
 </section>
