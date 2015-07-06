@@ -1,49 +1,49 @@
 <section data-ng-controller="HomeController">
-    <div class="container-fluid" style="height:600px;padding-left:25px;padding-right:25px;border: none 1px">
-        <div class="row" style="border: none 1px; margin-bottom:50px;" data-ng-controller="AuthenticationController">
-            <div class="col-sm-12" style="height:80%;border: none 1px">
-                <div class="row" style="border: none 1px">
-                    <div class="col-sm-7" style="border: none 1px">
-                        <div class="over-food-collage" style="padding:20px;position: relative; top:20px; float:left">
-                            <h1><b style="color:#AD3E33">NOSHAlert</b></h1>
+    <div class="container-fluid" style="height:600px;padding:15px;border: none 1px" data-ng-controller="AuthenticationController">
+        <div class="row" style="border: none 1px;margin:-5px; margin-bottom:25px;">
+            <div class="col-sm-12" style="padding:0px;height:80%;border: none 1px">
+                <div class="row" style="border: none 1px;margin:0">
+                    <div class="col-sm-7" style="border: none 1px;padding-top:45px">
+                        <h1><b style="color:#AD3E33">NOSHAlert</b></h1>
 
-                            <p style="font-size:16px"><b> is your resource for discovering food-related incidents
-                                reported in your area and around the country.</b></p>
+                        <p style="font-size:16px"><b> is your resource for discovering food-related incidents
+                            reported in your area and around the country.</b></p>
 
-                            <!--<div class="customHr">.</div>-->
-                        </div>
+                        <!--<div class="customHr">.</div>-->
                     </div>
-                    <div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2"  data-ng-hide="authentication.user" style="padding:10px;padding-top:20px;paccing-right:20px;margin-left:0;margin-right:10%;float:right;">
-                        <div class="row">
+                    <div class="col-sm-5"  data-ng-hide="authentication.user">
+                        <div class="row" style="margin:0">
                             <div class="col-sm-4 text-right" style="padding:0;position: relative; display:inline">
+
+                            </div>
+                            <div class="col-sm-1 text-right" style="padding:0;position: relative; display:inline">
                                 <a id="linkLogin" href="/auth/linkedin" class="undecorated-link">
                                     <img src="/modules/users/img/buttons/linkedin.png" height="30" width="30">
                                 </a>
                             </div>
-                            <div class="col-sm-1 text-center" style="padding:0;position: relative; display:inline;">
+                            <div class="col-sm-2 text-center" style="padding-left:5px;padding-right:5px;position: relative; display:inline;">
                                 <a id="googleLogin" href="/auth/google" class="undecorated-link">
                                     <img src="/modules/users/img/buttons/google.png" height="30" width="30">
                                 </a>
                             </div>
-                            <div class="col-sm-6 text-left" style="padding:0;position: relative;display:inline;">
+                            <div class="col-sm-1 text-left" style="padding:0;position: relative;display:inline;">
                                 <a id="faceLogin" href="/auth/facebook" class="undecorated-link">
                                     <img src="/modules/users/img/buttons/facebook.png" height="30" width="30">
                                 </a>
                             </div>
+                            <div class="col-sm-4 text-right" style="padding:0;position: relative; display:inline">
+
+                        </div>
                         </div>
 
                         <form data-ng-submit="signin()" class="ng-pristine ng-valid form-horizontal"
                               autocomplete="off">
                             <fieldset>
-                                <div class="form-group" style="margin-right:0">
-                                    <input type="text" id="username" name="username" class="form-control"
-                                           data-ng-model="credentials.username" placeholder="Username">
-                                </div>
-                                <div class="form-group" style="margin-right:0">
-                                    <input type="password" id="password" name="password" class="form-control"
-                                           data-ng-model="credentials.password" placeholder="Password">
-                                </div>
-                                <div class="text-center form-group" style="margin-top:10px;margin-right:0">
+                                <input type="text" id="username" name="username" class="form-control"
+                                       data-ng-model="credentials.username" placeholder="Username" style="margin-bottom:5px;">
+                                <input type="password" id="password" name="password" class="form-control"
+                                       data-ng-model="credentials.password" placeholder="Password">
+                                <div class="text-center" style="margin-left:5px;margin-top:10px;">
                                     <button type="submit" class="btn btn-primary"
                                             style="background-color: #ad3e33;display:inline">Sign in
                                     </button>
@@ -51,7 +51,7 @@
                                     <a href="/#!/signup" type="button" class="btn btn-primary show-signup"
                                        style="background-color: #777678 ">Sign up</a>
                                 </div>
-                                <div class="text-center forgot-password" style="height:30px;position: relative; float:left;margin-top:5px;margin-left:-20px;">
+                                <div class="text-center forgot-password" style="height:30px;position: relative; float:left;margin-top:5px;">
                                     <a href="/#!/password/forgot" style="color: #ad3e33 "><b>Forgot your
                                         password?</b></a>
                                 </div>
@@ -65,10 +65,10 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="border: none 1px">
-            <div class="col-sm-12" style="height:48px;border: none 1px">
+        <div class="row" style="border: none 1px;margin:0">
+            <div class="col-sm-12" style="height:48px;border: none 1px;padding:0">
                 <button type="button" class="btn  btn-block"
-                        style="border:solid 4px #84b06d;background-color: #777678; color:#DAD7DB; font-size: 14px;"
+                        style="border:solid 4px #84b06d;background-color: #777678; color:#DAD7DB; font-size: 12px;height:100%"
                         ng-click="gotoMore()">Find Out What NoshAlert Can Do For You
                 </button>
             </div>

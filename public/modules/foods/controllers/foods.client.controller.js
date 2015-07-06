@@ -189,8 +189,11 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             $scope.mapData.addColumn('number', 'Number of Reports');
             $scope.map = new google.visualization.GeoChart(document.getElementById('foodMap'));
 
-            $scope.mapOptions.width = ($(window).innerWidth() - 250) * .90;
-            $scope.mapOptions.height = 350;
+            var divwidth = ($(window).innerWidth() - 290);
+            var divheight = 340;
+
+            $scope.mapOptions.width = divwidth * .95;
+            $scope.mapOptions.height = divheight * .95;
 
             $scope.map.draw($scope.mapData, $scope.mapOptions);
         }
@@ -204,7 +207,7 @@ angular.module('foods').controller('FoodsController', ['$scope', '$stateParams',
             } else {
                 $scope.initMap();
                 $(window).resize(function () {
-                    google.maps.event.trigger($scope.map, "resize");
+                    window.google.maps.event.trigger($scope.map, "resize");
                     var item = $scope.foodEnforcementList[$scope.selectedItemIndex];
                     if(item){
                         $scope.updateMap(item);
