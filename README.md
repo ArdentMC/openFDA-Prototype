@@ -36,9 +36,9 @@ If the feedback loop with our users is the most important component of creating 
 
 
 ## Getting Started
-Installation instructions for this software can be found here - [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
+[Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md) - Installation instructions for this application
 
-The technologies chosen for this application, including front and back end libraries, deployment technologies, and hosting platform can be found here - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
+[Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md) - The technologies chosen for this application, including front and back end libraries, deployment technologies, and hosting platform
 
 ## General Reference
 * [How to Docker](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/HowToDocker.md)
