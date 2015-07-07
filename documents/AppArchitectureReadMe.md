@@ -33,7 +33,7 @@ The website is built on NodeJS due to the runtime's flexibility and strong open 
 ### Container Deployment
 Scripts for deploying the application in it's standalone form, as a Docker container, or within a Kubernetes cluster are provided.
 
-* See: [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/wiki/Installation-Instructions) for how to use these scripts.*
+* See: [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md) for how to use these scripts.*
 
 ### Hosted Architecture for the Prototype
 The prototype application is currently hosted on Google Cloud platform, leveraging 5 virtual machines as described on the [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/wiki/Kubernetes) page.
