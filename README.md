@@ -16,7 +16,7 @@ The approach we took in developing this prototype - any piece software, really -
 * Get a working product in the hands of our users as soon as possible
 * Based on user feedback and gathered metrics, continuously iterate upon the design in small batch sizes
 
-To that end, after studying the openFDA API, our development cycle began with a meeting with a handful of our prospective users, brainstorming ideas that appealed to them first and foremost.  We continually remind ourselves that the products we create are not for ourselves, but for the people use them.
+To that end, after studying the openFDA API, our development cycle began with a meeting with a handful of our prospective users, brainstorming ideas that appealed to them first and foremost.  We continually remind ourselves that the products we create are not for ourselves, but for the people using them.
 
 Once we settled on a chosen product idea (and saving notes on a few backup ideas in case we needed to pivot after initial release), we started developing a very specific 'tracer bullet' piece of functionality that formed the central feature of our intended product. At the same time, we began implementing our CI/CD pipeline that was so critical in getting each new iterative release into the hands of our users as quickly as possible.  Our users previewed this very early release and were able to give us quality feedback that allowed us to make incremental improvements on the original idea.  This became our regular, sustainable routine.  Each day, we made small enhancements, fixed a few defects and fed the user feedback loop essential to agile, iterative development.
 
