@@ -36,6 +36,6 @@ Scripts for deploying the application in it's standalone form, as a Docker conta
 * See: [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md) for how to use these scripts.*
 
 ### Hosted Architecture for the Prototype
-The prototype application is currently hosted on Google Cloud platform, leveraging 5 virtual machines as described on the [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/wiki/Kubernetes) page.
+The prototype application is currently hosted on Google Cloud platform, leveraging 5 virtual machines as described in our [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/wiki/Kubernetes) information document.
 
 The application is replicated times across the cluster with a separate MongoDB instance. Each container is based off the [google/nodejs](https://registry.hub.docker.com/u/google/nodejs/) base image. Kubernetes handles the cluster and load balancing.
