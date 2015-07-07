@@ -1,8 +1,6 @@
-# ArdentMC
-## OpenFDA Prototype - NOSHalert.com
-[![Build Status](https://travis-ci.org/ArdentMC/openFDA-Prototype.svg?branch=master)](https://travis-ci.org/ArdentMC/openFDA-Prototype)
+[www.NOSHalert.com](http://www.NOSHalert.com) - a prototype built by ArdentMC based on the [openFDA API] (http://open.fda.gov)
 
-[www.NOSHalert.com](http://www.NOSHalert.com)
+[![Build Status](https://travis-ci.org/ArdentMC/openFDA-Prototype.svg?branch=master)](https://travis-ci.org/ArdentMC/openFDA-Prototype)
 
 ## The Team
 * Product Owner and Leader: Jim Correll
