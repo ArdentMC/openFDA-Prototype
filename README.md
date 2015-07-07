@@ -5,8 +5,8 @@
 [www.NOSHAlert.com](http://www.NOSHalert.com)
 
 ## The Team
-* Scrum Master and Leader: Amy Rosen
-* Technical Architect: Jim Correll
+* Product Owner and Leader: Jim Correll
+* Scrum Master: Amy Rosen
 * Front End Developer: Gene Staten
 * Back End Developer: Justin Downs
 * DevOps Engineer: Elise Walker
@@ -29,12 +29,12 @@ Formally, what we have today can be considered a 'release.'  But we also had one
 This version is labeled as the released prototype for purposes of version control, but we don't considered it the 'final' version of the prototype.  Even the word prototype might be a misnomer it today's agile development climate.  It merely represents the latest releasable version at this point in time.  With a backlog of features to address, how can it be considered finished?
 
 ## Epilogue
-The above is a short story version of our philosophical approach to software devleopment.  But, in doing so, of course we've glossed over a key ingredients.  If the feedback loop with our users is the most important component of creating applications, then automating the delivery of that application to users becomes just as critical. The following points represent key factors in support of that deployment pipeline.
+If the feedback loop with our users is the most important component of creating applications, then automating the delivery of that application to users becomes just as critical. The following points represent key factors in support of that deployment pipeline.
 
 * We developed and instantiated our TravisCI pipeline very early in our product creation cycle, without slowing down our developers
 * Our developers created automated unit tests to ensure we could deliver quality software to our users at each release
-* We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform (Google Cloud) to monitor the health of our application and services
-* We deployed our prototype into an application container, Docker, that allowed us to be more flexible in choosing a hosting environment
+* We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform to monitor the health of our application and services
+* We deployed our prototype into an application container, that allowed us to be more flexible in choosing a hosting environment
 
 ## Get Started
 * [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
@@ -45,15 +45,3 @@ The above is a short story version of our philosophical approach to software dev
  * [Docker Installation](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/DockerInstallationReadMe.md)
  * [Build Docker Image](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
 * [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
-
-## Meeting Minutes
-* [June 19, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06192015.md)
-* [June 20, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06202015.md)
-* [June 21, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06212015.md)
-* [June 22, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06222015.md)
-* [June 23, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06232015.md)
-* [June 24, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06242015.md)
-* [June 25, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06252015.md)
-* [June 26, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06262015.md)
-* [June 29, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06292015.md)
-* [June 30, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06302015.md)
