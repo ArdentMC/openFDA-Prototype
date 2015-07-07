@@ -1,0 +1,21 @@
+Meeting minutes from 6/22/15
+Question edited and submitted to government is complete.
+
+Need to get Brandon/BD to write the copyright info – Elizabeth to follow up and Amy will add issue and assign to Brandon through git.
+
+Justin’s issues have been worked out  has pushed his latest code and currently looking into mapping. It was determined that we would use google maps api by the team.
+
+Gene is pulling down all the api modules and working on food events trying to determine if we can write back up to report incidents we may not be able to and may have to store that ourselves.
+
+Question for Elise – wanted to know when we could view what has been done so far on Azure so testing/user community can take a look – update  Elise has the application deployed through Docker in a VM on azure and the endpoints are exposed but she is seeing connections refused when attempting to access from internet. In process of looking into it.
+
+It was determined that code freeze would begin at midnight on 6/24 end of day by Wednesday (I assume midnight HI time).
+Jim/Elizabeth to look into and make sure we have everything we need to submit by the end of the week.
+
+Have I missed anything? Feel free to jump in. I will post on git.
+
+I changed our meeting from 9:30/3:30 to 10:00/4:00 moving forward.
+
+Thanks,
+Amy
+
