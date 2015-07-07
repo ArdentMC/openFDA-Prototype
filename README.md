@@ -27,19 +27,13 @@ Formally, what we have today can be considered a 'release.'  But we also had one
 This version is labeled as the released prototype for purposes of version control, but we don't considered it the 'final' version of the prototype.  Even the word prototype might be a misnomer it today's agile development climate.  It merely represents the latest releasable version at this point in time.  With a backlog of features to address, how can it be considered finished?
 
 ## Epilogue
-If the feedback loop with our users is the most important component of creating applications, then automating the delivery of that application to users becomes just as critical. The following points represent key factors in support of that deployment pipeline.
-
-* We developed and instantiated our TravisCI pipeline very early in our product creation cycle, without slowing down our developers
-* Our developers created automated unit tests to ensure we could deliver quality software to our users at each release.  Evidence of such tests may be found in [this javascript file] (https://github.com/ArdentMC/openFDA-Prototype/blob/master/app/tests/user.server.model.test.js)
-* We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform to monitor the health of our application and services.  Our TravisCI dashboard is located here - [TravisCI Dashboard](https://travis-ci.org/ArdentMC/openFDA-Prototype)
-* We deployed our prototype into an application container, that allowed us to be more flexible in choosing a hosting environment.  Supporting evidence in the form of DockerFile is here - [DockerFile](https://github.com/ArdentMC/openFDA-Prototype/blob/master/Dockerfile)
-* 
-
 * In developing this prototype, we employed several open source technologies that are documented here - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
 * We deployed our application to the Google Cloud Platform - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
 * Our developers created automated unit tests to ensure we could deliver quality software to our users at each release.  Evidence of such tests may be found in [this javascript file] (https://github.com/ArdentMC/openFDA-Prototype/blob/master/app/tests/user.server.model.test.js)
 * Technology chosen for our Continuous Integration Platform is documented here - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
-* [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/KubernetesInfo.md) was used for configuration management
+* [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/KubernetesInfo.md) was chosen for configuration management
+* We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform to monitor the health of our application and services.  Our TravisCI dashboard is located here - [TravisCI Dashboard](https://travis-ci.org/ArdentMC/openFDA-Prototype)
+* We deployed our prototype into an application container, that allowed us to be more flexible in choosing a hosting environment.  Supporting evidence in the form of DockerFile is here - [DockerFile](https://github.com/ArdentMC/openFDA-Prototype/blob/master/Dockerfile)
 * Evidence of using an API can be found here [Facebook used for authentication] (https://github.com/ArdentMC/openFDA-Prototype/blob/master/config/strategies/facebook.js)
 * Notes from our daily standups may be found [in this folder](https://github.com/ArdentMC/openFDA-Prototype/tree/master/documents/Meeting-Minutes)
 * Installation instructions may be found here - [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
