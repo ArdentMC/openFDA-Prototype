@@ -18,4 +18,4 @@ Log out, back in, and you are done.
 
 ## How to Docker:
 
-Once installed, see our How To Docker information document here: https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/HowToDocker.md
+Once installed, see our How To Docker information document here: [How to Docker] (https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/HowToDocker.md)
