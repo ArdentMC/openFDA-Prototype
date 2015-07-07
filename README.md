@@ -12,4 +12,4 @@
 * [How to Docker](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/HowToDocker.md)
  * [Docker Installation](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/DockerInstallationReadMe.md)
  * [Build Docker Image](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
-* [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/wiki/Kubernetes)
+* [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
