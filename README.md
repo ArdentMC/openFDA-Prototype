@@ -34,9 +34,11 @@ If the feedback loop with our users is the most important component of creating 
 * We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform to monitor the health of our application and services
 * We deployed our prototype into an application container, that allowed us to be more flexible in choosing a hosting environment
 
-## Get Started
-* [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
-* [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
+
+## Getting Started
+Installation instructions for this software can be found here - [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
+
+The technologies chosen for this application, including front and back end libraries, deployment technologies, and hosting platform can be found here - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
 
 ## General Reference
 * [How to Docker](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/HowToDocker.md)
