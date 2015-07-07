@@ -45,3 +45,15 @@ The above is a short story version of our philosophical approach to software dev
  * [Docker Installation](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/DockerInstallationReadMe.md)
  * [Build Docker Image](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
 * [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
+
+## Meeting Minutes
+* [June 19, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06192015.md)
+* [June 20, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06202015.md)
+* [June 21, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06212015.md)
+* [June 22, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06222015.md)
+* [June 23, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06232015.md)
+* [June 24, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06242015.md)
+* [June 25, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06252015.md)
+* [June 26, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06262015.md)
+* [June 29, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06292015.md)
+* [June 30, 2015](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/Meeting-Minutes/06302015.md)
