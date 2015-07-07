@@ -6,7 +6,7 @@
 
 ## Get Started
 * [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
-* [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/wiki/Application-Architecture)
+* [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
 
 ## General Reference
 * [How to Docker](https://github.com/ArdentMC/openFDA-Prototype/wiki/How-to-Docker)
