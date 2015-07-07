@@ -1,6 +1,6 @@
 ## Running
 
-Run, and create it doesn't exist, a container.
+Run, and create if it doesn't exist, a container.
 
     docker run image-name
 
