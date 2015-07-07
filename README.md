@@ -9,7 +9,7 @@
 * [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
 
 ## General Reference
-* [How to Docker](https://github.com/ArdentMC/openFDA-Prototype/wiki/How-to-Docker)
- * [Docker Installation](https://github.com/ArdentMC/openFDA-Prototype/wiki/Docker-Installation)
+* [How to Docker](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/HowToDocker.md)
+ * [Docker Installation](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/DockerInstallationReadMe.md)
  * [Create Docker Image](https://github.com/ArdentMC/openFDA-Prototype/wiki/Creating-Docker-Image)
 * [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/wiki/Kubernetes)
