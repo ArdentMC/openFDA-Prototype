@@ -1,8 +1,8 @@
 # ArdentMC
-## OpenFDA Prototype - NoshAlert.com
+## OpenFDA Prototype - NOSHalert.com
 [![Build Status](https://travis-ci.org/ArdentMC/openFDA-Prototype.svg?branch=master)](https://travis-ci.org/ArdentMC/openFDA-Prototype)
 
-[www.NoshAlert.com](http://www.noshalert.com)
+[www.NOSHAlert.com](http://www.NOSHalert.com)
 
 ## The Team
 * Scrum Master and Leader: Amy Rosen
@@ -14,11 +14,27 @@
 
 ## Our Approach
 The approach we took in developing this prototype - any piece software, really - follows a few simple rules:
-* Incorporate user feedback as soon as possible, ideally before anything is written
+* Incorporate user feedback as soon as possible, ideally before any code is written
 * Get a working product in the hands of our users as soon as possible
 * Based on user feedback and gathered metrics, continuously iterate upon the design in small batch sizes
 
-To that end, our development cycle began with the team studying the openFDA API to learn what sort of data was available and brainstorm on a few possible product ideas. Once we had a short list, we approached a handful of prospective users and began running our ideas passed them.  Lo and behold, all of them were met with varying degrees of disdain and indifference.  But, one idea that came from one of ours struck a chord with us.  We went back to the drawing board, tweaked the idea some and brought it back to the same users and suddenly, they were excited about the possibilities.  We didn't come up with the idea for our application, our prospective users did.
+To that end, after studying the openFDA API, our development cycle began with a meeting with a handful of our prospective users, brainstorming ideas that appealed to them and potentially a larger user base - the general public.  Our goal was to set about building something they wanted, not what we wanted.  We continually remind ourselves that the products we create are not for ourselves, they are for our users.
+
+Once we settled on a chosen product idea (and saving notes on a few backup ideas in case we needed to pivot after initial release), we started developing a very specific 'tracer bullet' piece of functionality that formed the central feature of our intended product. At the same time, we began implementing our CI/CD pipeline that was so critical in getting each new iterative release into the hands of our users as quickly as possible.  Our users previewed this very early release and were able to give us quality feedback that allowed us to make incremental improvements on the original idea.  This became our regular, sustainable routine.  Each day, we made small enhancements, fixed a few defects and fed the user feedback loop essential to agile, iterative development.
+
+We featured an open development environment, extending the concept of leveraging a public source repository even further by inviting users to attend our daily calls and provide direct feedback to the user stories we were coding against, even reprioritizing them on the fly at times.  And finally, our users named the app itself.  We invited everyone in the company to vote on one of four name finalists, and thus, NOSHalert was born.
+
+Formally, what we have today can be considered a 'release.'  But we also had one very early in this process, and have had multiple releases on a daily basis ever since.  We didn't target a 'final' set of requirements, we merely developed against the most important requirements as defined by our users, and iteratively improved upon them.  Today, after wrapping development up for the purposes of submission, we still have a backlog of user stories and issues that would be completed had this been a continuing project.
+
+This version is labeled as the released prototype for purposes of version control, but we don't considered it the 'final' version of the prototype.  Even the word prototype might be a misnomer it today's agile development climate.  It merely represents the latest releasable version at this point in time.  With a backlog of features to address, how can it be considered finished?
+
+## Epilogue
+The above is a short story version of our philosophical approach to software devleopment.  But, in doing so, of course we've glossed over a key ingredients.  If the feedback loop with our users is the most important component of creating applications, then automating the delivery of that application to users becomes just as critical. The following points represent key factors in support of that deployment pipeline.
+
+* We developed and instantiated our TravisCI pipeline very early in our product creation cycle, without slowing down our developers
+* Our developers created automated unit tests to ensure we could deliver quality software to our users at each release
+* We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform (Google Cloud) to monitor the health of our application and services
+* We deployed our prototype into an application container, Docker, that allowed us to be more flexible in choosing a hosting environment
 
 ## Get Started
 * [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
