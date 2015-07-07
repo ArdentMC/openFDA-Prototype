@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/ArdentMC/openFDA-Prototype.svg?branch=master)](https://travis-ci.org/ArdentMC/openFDA-Prototype)
 
 ## The Team
-* Product Owner and Leader: Jim Correll
+* Leader: Jim Correll
 * Scrum Master: Amy Rosen
 * Front End Developer: Gene Staten
 * Back End Developer: Justin Downs
