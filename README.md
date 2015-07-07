@@ -30,18 +30,17 @@ This version is labeled as the released prototype for purposes of version contro
 If the feedback loop with our users is the most important component of creating applications, then automating the delivery of that application to users becomes just as critical. The following points represent key factors in support of that deployment pipeline.
 
 * We developed and instantiated our TravisCI pipeline very early in our product creation cycle, without slowing down our developers
-* Our developers created automated unit tests to ensure we could deliver quality software to our users at each release
-* We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform to monitor the health of our application and services
-* We deployed our prototype into an application container, that allowed us to be more flexible in choosing a hosting environment
+* Our developers created automated unit tests to ensure we could deliver quality software to our users at each release.  Evidence of such tests may be found in [this javascript file] (https://github.com/ArdentMC/openFDA-Prototype/blob/master/app/tests/user.server.model.test.js)
+* We leveraged continuous monitoring tools and notifications in two areas:  TravisCI to monitor the health of our builds and deployments, and monitoring tools available in our chosen cloud platform to monitor the health of our application and services.  Our TravisCI dashboard is located here - [TravisCI Dashboard](https://travis-ci.org/ArdentMC/openFDA-Prototype)
+* We deployed our prototype into an application container, that allowed us to be more flexible in choosing a hosting environment.  Supporting evidence in the form of DockerFile is here - [DockerFile](https://github.com/ArdentMC/openFDA-Prototype/blob/master/Dockerfile)
+* 
 
-
-## Getting Started
-[Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md) - Installation instructions for this application
-
-[Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md) - The technologies chosen for this application, including front and back end libraries, deployment technologies, and hosting platform
-
-## General Reference
-* [How to Docker](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/HowToDocker.md)
- * [Docker Installation](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/DockerInstallationReadMe.md)
- * [Build Docker Image](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
-* [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/BuildDockerImage.md)
+* In developing this prototype, we employed several open source technologies that are documented here - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
+* We deployed our application to the Google Cloud Platform - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
+* Our developers created automated unit tests to ensure we could deliver quality software to our users at each release.  Evidence of such tests may be found in [this javascript file] (https://github.com/ArdentMC/openFDA-Prototype/blob/master/app/tests/user.server.model.test.js)
+* Technology chosen for our Continuous Integration Platform is documented here - [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/AppArchitectureReadMe.md)
+* [Kubernetes](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/KubernetesInfo.md) was used for configuration management
+* Evidence of using an API can be found here [Facebook used for authentication] (https://github.com/ArdentMC/openFDA-Prototype/blob/master/config/strategies/facebook.js)
+* Notes from our daily standups may be found [in this folder](https://github.com/ArdentMC/openFDA-Prototype/tree/master/documents/Meeting-Minutes)
+* Installation instructions may be found here - [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
+* Finally, this prototype and its underlying technologies are openly licensed and free of charge - [MIT License](https://github.com/ArdentMC/openFDA-Prototype/blob/master/LICENSE.md)
