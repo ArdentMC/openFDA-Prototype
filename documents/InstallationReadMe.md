@@ -8,7 +8,7 @@ The application is created show that it can be deployed in any environment throu
 
 ## To Deploy with Docker using Docker Compose:
 * Install Docker and Docker-Compose
- * [Install Docker](https://github.com/ArdentMC/openFDA-Prototype/wiki/Docker-Installation)
+ * [Install Docker](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/DockerInstallationReadMe.md)
  * [Docker Compose](https://docs.docker.com/compose/install/)
 * Change directory to the root project folder
 * Execute the command: `docker-compose up`
