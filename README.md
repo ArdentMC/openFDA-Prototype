@@ -5,7 +5,7 @@
 [www.NoshAlert.com](http://www.noshalert.com)
 
 ## Get Started
-* [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/wiki/Installation-Instructions)
+* [Installation Instructions](https://github.com/ArdentMC/openFDA-Prototype/blob/master/documents/InstallationReadMe.md)
 * [Application Architecture](https://github.com/ArdentMC/openFDA-Prototype/wiki/Application-Architecture)
 
 ## General Reference
